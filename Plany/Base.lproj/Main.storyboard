@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Plany-->
         <scene sceneID="Jw8-W8-Zvl">
             <objects>
-                <viewController id="q3b-1l-X7i" customClass="ViewController" customModule="Plany" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="peppe" id="q3b-1l-X7i" customClass="ViewController" customModule="Plany" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a7p-8k-eCI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -112,13 +112,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="DZh-fV-Fv2">
-                        <barButtonItem key="rightBarButtonItem" title="Calendar" image="calendar" catalog="system" id="5on-ZN-Oi0">
-                            <connections>
-                                <segue destination="Pzu-xZ-yfa" kind="show" id="OX5-cN-WeR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Plany" id="DZh-fV-Fv2"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AddHomeworkButton" destination="CaQ-fQ-Bkc" id="5gb-Dv-onm"/>
@@ -152,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="-607" y="586"/>
         </scene>
-        <!--View Controller-->
+        <!--Calendar View Controller-->
         <scene sceneID="s2V-J6-rHG">
             <objects>
-                <viewController id="Pzu-xZ-yfa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="peppe2" id="Pzu-xZ-yfa" customClass="CalendarViewController" customModule="Plany" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UbB-B1-0Vo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -170,7 +164,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
