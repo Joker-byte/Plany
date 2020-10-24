@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Plany-->
+        <!--View Controller-->
         <scene sceneID="Jw8-W8-Zvl">
             <objects>
                 <viewController storyboardIdentifier="peppe" id="q3b-1l-X7i" customClass="ViewController" customModule="Plany" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Plany" id="DZh-fV-Fv2"/>
+                    <navigationItem key="navigationItem" id="DZh-fV-Fv2"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AddHomeworkButton" destination="CaQ-fQ-Bkc" id="5gb-Dv-onm"/>

@@ -28,12 +28,33 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        //    mioButton.setImage(UIImage(named: "ProfileImage"), for: .normal)
+       
         let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        mioButton.setImage(UIImage(named: ""), for: .normal)
+            mioButton.setImage(UIImage(named: "ProfileImage"), for: .normal)
+            mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem()
+        
+        
+        
+        //let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+      //  let hello = UIBarButtonItem(title: "Hello", style: .plain, target: self, action: nil)
+      //  let name = UIBarButtonItem (title: "Nome", style: .plain, target: self, action: nil)
+        
+      //  navigationItem.rightBarButtonItems = [add]
+      //  navigationItem.leftBarButtonItems = [hello, name]
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mioButton)
+        
+       // navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage (named: "ProfileImage"), style: .plain, target: self, action: #selector(addTapped))
+      
+        let hello = UILabel()
+        hello.text = String("hello")
             
-   
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hello)
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -54,8 +75,8 @@ class ViewController: UIViewController {
 
 extension UINavigationController {
     func rightButton() {
-        let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        mioButton.setImage(UIImage(named: ""), for: .normal)
+      //  let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+       // mioButton.setImage(UIImage(named: ""), for: .normal)
         
     }
 }
