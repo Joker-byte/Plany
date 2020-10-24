@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         
         
-        
+       
         //let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
       //  let hello = UIBarButtonItem(title: "Hello", style: .plain, target: self, action: nil)
       //  let name = UIBarButtonItem (title: "Nome", style: .plain, target: self, action: nil)
@@ -45,18 +45,17 @@ class ViewController: UIViewController {
       //  navigationItem.rightBarButtonItems = [add]
       //  navigationItem.leftBarButtonItems = [hello, name]
         
-        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mioButton)
         
        // navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage (named: "ProfileImage"), style: .plain, target: self, action: #selector(addTapped))
         //navigationItem.leftBarButtonItems = UIBarButtonItem(customView: HelloLabel)
         
-      
-        let hello = UIBarButtonItem (title: "Hello", style: .plain, target: self, action: nil)
-          
+        let hello: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
+       
+        hello.setTitle("Hello", for: .normal)
+        hello.setTitleColor(.black, for: .normal)
         
-            
-        navigationItem.leftBarButtonItems = [hello]
-        
+       navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hello)
         
         // Do any additional setup after loading the view.
     }
