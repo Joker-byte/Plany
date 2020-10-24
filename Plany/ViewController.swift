@@ -10,19 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet weak var HelloLabel: UILabel!
-    
-    @IBOutlet weak var NameLabel: UILabel!
-    
-    
-    @IBOutlet weak var ProfileImage: UIImageView!
-    
     @IBOutlet weak var SearchBar: UISearchBar!
     
     @IBOutlet weak var AddHomeworkButton: UIButton!
     
     @IBOutlet weak var HomeworkLabel: UILabel!
-    
     
     @IBOutlet weak var TasksLabel: UILabel!
     
@@ -31,9 +23,12 @@ class ViewController: UIViewController {
         //let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         //    mioButton.setImage(UIImage(named: "ProfileImage"), for: .normal)
        
-        let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
             mioButton.setImage(UIImage(named: "ProfileImage"), for: .normal)
             mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+            //mioButton.layoutMargins.right = 2
+          //  mioButton.layoutMargins.left = 2
+          //  mioButton.layer.cornerRadius = 10
         
         
         
