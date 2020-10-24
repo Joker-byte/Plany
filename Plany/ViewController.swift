@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         //let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         //    mioButton.setImage(UIImage(named: "ProfileImage"), for: .normal)
        
-        let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 5, height: 5))
+        let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
             mioButton.setImage(UIImage(named: "ProfileImage"), for: .normal)
             mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         
@@ -51,11 +51,24 @@ class ViewController: UIViewController {
         //navigationItem.leftBarButtonItems = UIBarButtonItem(customView: HelloLabel)
         
         let hello: UIButton = UIButton(frame: CGRect(x: 100, y: 400, width: 100, height: 50))
-       
-        hello.setTitle("Hello", for: .normal)
+        hello.titleLabel?.numberOfLines = 2
+        hello.setTitle("Hello \nName surname", for: .normal)
+        
         hello.setTitleColor(.black, for: .normal)
         
-       navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hello)
+    
+        
+        
+    navigationItem.leftBarButtonItem = UIBarButtonItem(customView: hello)
+       // let label = UILabel()
+     //   hello.backgroundColor = .clear
+     //   hello.numberOfLines = 2
+       // label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        //hello.textAlignment = .left
+       // label.textColor = .black
+      //   label.text = "Hello\nName surname"
+    //    self.navigationItem.titleView = label
+     //
         
         // Do any additional setup after loading the view.
     }
