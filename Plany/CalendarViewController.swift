@@ -13,10 +13,10 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         
         let addButtonEvent = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEvent))
-       // let play = UIBarButtonItem(title: "Calendar", style: .plain, target: self, action: #selector(addTapped))
+       //let play = UIBarButtonItem(title: "Calendar", style: .plain, target: self, action: #selector(addTapped))
 
        
-      //  navigationItem.backBarButtonItem?.title?.append("Calendar")
+       navigationItem.backBarButtonItem?.title?.append("Calendar")
     
         
     
@@ -25,15 +25,15 @@ class CalendarViewController: UIViewController {
        
        // navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: hello)]
         
-       // navigationItem.rightBarButtonItem =  addButtonEvent
+        navigationItem.rightBarButtonItem =  addButtonEvent
        // navigationItem.leftBarButtonItem =
        
         
        // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(addTapped))
         
         // Do any additional setup after loading the view.
-        setupNavigation(barTintColor: .white)
-        setupRightButton(target: self, action: #selector(addTapped), imageName: "ProfileImage")
+        //setupNavigation(barTintColor: .white)
+      //  setupRightButton(target: self, action: #selector(addTapped), imageName: "ProfileImage")
     }
     
     @objc func addTapped () {

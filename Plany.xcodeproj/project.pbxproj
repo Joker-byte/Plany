@@ -10,7 +10,6 @@
 		9A07CB5E254175BA000C2B50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB5D254175BA000C2B50 /* AppDelegate.swift */; };
 		9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB61254175BA000C2B50 /* ViewController.swift */; };
 		9A07CB65254175BB000C2B50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07CB63254175BA000C2B50 /* Main.storyboard */; };
-		9A07CB68254175BB000C2B50 /* Plany.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB66254175BB000C2B50 /* Plany.xcdatamodeld */; };
 		9A07CB6A254175BC000C2B50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A07CB69254175BC000C2B50 /* Assets.xcassets */; };
 		9A07CB6D254175BC000C2B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */; };
 		9A07CB78254175BC000C2B50 /* PlanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB77254175BC000C2B50 /* PlanyTests.swift */; };
@@ -40,7 +39,6 @@
 		9A07CB5D254175BA000C2B50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A07CB61254175BA000C2B50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A07CB64254175BA000C2B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9A07CB67254175BB000C2B50 /* Plany.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plany.xcdatamodel; sourceTree = "<group>"; };
 		9A07CB69254175BC000C2B50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A07CB6C254175BC000C2B50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A07CB6E254175BC000C2B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				9A07CB69254175BC000C2B50 /* Assets.xcassets */,
 				9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */,
 				9A07CB6E254175BC000C2B50 /* Info.plist */,
-				9A07CB66254175BB000C2B50 /* Plany.xcdatamodeld */,
 			);
 			path = Plany;
 			sourceTree = "<group>";
@@ -264,7 +261,6 @@
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,
 				9A07CB5E254175BA000C2B50 /* AppDelegate.swift in Sources */,
-				9A07CB68254175BB000C2B50 /* Plany.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,19 +595,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9A07CB66254175BB000C2B50 /* Plany.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9A07CB67254175BB000C2B50 /* Plany.xcdatamodel */,
-			);
-			currentVersion = 9A07CB67254175BB000C2B50 /* Plany.xcdatamodel */;
-			path = Plany.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9A07CB52254175BA000C2B50 /* Project object */;
 }
