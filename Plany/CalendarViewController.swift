@@ -18,20 +18,22 @@ class CalendarViewController: UIViewController {
        
       //  navigationItem.backBarButtonItem?.title?.append("Calendar")
     
-    
+        
     
         navigationItem.title = String("Calendar")
 
-        
+       
        // navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: hello)]
         
-        navigationItem.rightBarButtonItem =  addButtonEvent
+       // navigationItem.rightBarButtonItem =  addButtonEvent
        // navigationItem.leftBarButtonItem =
        
         
        // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(addTapped))
         
         // Do any additional setup after loading the view.
+        setupNavigation(barTintColor: .white)
+        setupRightButton(target: self, action: #selector(addTapped), imageName: "ProfileImage")
     }
     
     @objc func addTapped () {
