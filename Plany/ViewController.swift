@@ -18,28 +18,34 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var TasksLabel: UILabel!
     
+    @IBOutlet weak var Calendar: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let hello: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-        hello.titleLabel?.numberOfLines = 2
-        hello.setTitle("Hello \nName surname", for: .normal)
-        
-        hello.setTitleColor(.black, for: .normal)
+           
+//        let hello: UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+//        hello.titleLabel?.numberOfLines = 2
+//        hello.setTitle("Hello \nName surname", for: .normal)
 //
-        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 62, height: 32))
+//        hello.setTitleColor(.black, for: .normal)
+//
+        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 32))
         label.numberOfLines = 2
         label.text = "Hello \nName surname"
-        label.textColor = .black
+        label.textColor = .white
         
-        navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: hello)]
+        navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
 //        setupNavigation(barTintColor: .white)
 //        setupRightButton(target: self, action: #selector(addTapped), imageName: "ProfileImage")
+        Calendar.image = UIImage(named: "CalendarIcon")
+        
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        
         let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
         if #available(iOS 13.0, *) {
             mioButton.setImage(UIImage(systemName: "person.fill"), for: .normal)
@@ -49,14 +55,21 @@ class ViewController: UIViewController {
         mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         mioButton.tintColor = .black
         mioButton.frame.size.height = 40
-        mioButton.frame.size.width = 40 
+        mioButton.frame.size.width = 40
      //   mioButton.contentVerticalAlignment = .fill
    //     mioButton.contentHorizontalAlignment = .fill
         mioButton.imageView?.contentMode = .scaleAspectFit
         
-        
+       
       navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
+      
+       
+
+        navigationItem.backButtonTitle = "Calendar"
         
+        
+            AddHomeworkButton.setImage(UIImage(named: "add"), for: .normal)
+     
     }
     
     
@@ -68,6 +81,11 @@ class ViewController: UIViewController {
         vc.modalPresentationStyle = .overFullScreen
         navigationController?.pushViewController(vc, animated: true)
         // present(rootVc, animated: true, completion: nil)
+    }
+    
+    
+    @objc func addHomework () {
+        print("homework added")
     }
 }
 
@@ -84,6 +102,7 @@ extension UIViewController {
 //       button.contentHorizontalAlignment = .fill
 //       let barButton = UIBarButtonItem(customView: button)
 //       navigationItem.rightBarButtonItems = [barButton]
+        
      }
     
 //    func setupNavigation(title: String? = nil, colorTitle: UIColor = .white, fontName: String = "HelveticaNeue-UltraLight", fontSize: CGFloat = 20 ,  barTintColor: UIColor, imageName: String = "") {

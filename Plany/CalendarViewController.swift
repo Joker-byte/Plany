@@ -13,20 +13,25 @@ class CalendarViewController: UIViewController {
         super.viewDidLoad()
         
         let addButtonEvent = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEvent))
-       //let play = UIBarButtonItem(title: "Calendar", style: .plain, target: self, action: #selector(addTapped))
+//        let play = UIBarButtonItem(title: "Calendar", style: .plain, target: self, action: #selector(addTapped))
 
        
-       navigationItem.backBarButtonItem?.title?.append("Calendar")
+//       navigationItem.backBarButtonItem?.title?.append("Calendar")
     
         
-    
-        navigationItem.title = String("Calendar")
+//        navigationItem.backBarButtonItem?.title = "< Calendar"
+//        navigationItem.backBarButtonItem?.tintColor = .black
+        
+        
+       // navigationItem.title = ""
 
        
        // navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: hello)]
         
         navigationItem.rightBarButtonItem =  addButtonEvent
-       // navigationItem.leftBarButtonItem =
+        
+        
+     // navigationItem.leftBarButtonItem = play
        
         
        // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(addTapped))

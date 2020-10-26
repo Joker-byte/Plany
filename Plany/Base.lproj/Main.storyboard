@@ -37,7 +37,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LwJ-WJ-JuG">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeworkCell" id="LwJ-WJ-JuG">
                                         <rect key="frame" x="56" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZSp-7f-YhN">
@@ -67,7 +67,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="G2Q-Jh-NEa">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="G2Q-Jh-NEa">
                                         <rect key="frame" x="34" y="0.0" width="326" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ogz-OS-W68">
@@ -78,8 +78,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wo7-Rn-cdQ">
-                                <rect key="frame" x="362" y="127" width="32" height="32"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo7-Rn-cdQ">
+                                <rect key="frame" x="362" y="126" width="32" height="34.5"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34.5" id="HuZ-P1-ZOX"/>
@@ -87,12 +87,11 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-fQ-Bkc">
-                                <rect key="frame" x="369" y="185" width="18" height="22"/>
-                                <state key="normal" image="plus" catalog="system"/>
+                                <rect key="frame" x="357" y="185" width="30" height="34"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ywn-Bg-LTg"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CaQ-fQ-Bkc" firstAttribute="top" secondItem="Wo7-Rn-cdQ" secondAttribute="bottom" constant="24.5" id="1QB-5X-zW8"/>
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="2sS-9z-Zid" secondAttribute="trailing" constant="174" id="4yn-6O-kjx"/>
@@ -103,6 +102,7 @@
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="CaQ-fQ-Bkc" secondAttribute="trailing" constant="27" id="Jgi-Ao-5zE"/>
                             <constraint firstItem="9YG-it-bBy" firstAttribute="top" secondItem="mHJ-l9-jis" secondAttribute="bottom" constant="15" id="M9M-yZ-Rko"/>
                             <constraint firstItem="mHJ-l9-jis" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" id="O3J-Lu-spj"/>
+                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wxs-7A-C1b" secondAttribute="trailing" symbolic="YES" id="UlB-tc-mb9"/>
                             <constraint firstItem="Wo7-Rn-cdQ" firstAttribute="top" secondItem="ywn-Bg-LTg" secondAttribute="top" constant="38" id="e7E-ds-sie"/>
                             <constraint firstItem="9YG-it-bBy" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" constant="20" id="i7R-bb-0Xc"/>
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="5lf-GI-eoM" secondAttribute="trailing" constant="10" id="k81-s2-LrE"/>
@@ -110,6 +110,7 @@
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="Wo7-Rn-cdQ" secondAttribute="trailing" constant="20" id="md4-IY-i3y"/>
                             <constraint firstItem="2sS-9z-Zid" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" id="oEa-l8-gWl"/>
                             <constraint firstItem="Wxs-7A-C1b" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" constant="20" id="oiX-JZ-l2I"/>
+                            <constraint firstItem="CaQ-fQ-Bkc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9YG-it-bBy" secondAttribute="trailing" constant="8" symbolic="YES" id="sTa-cG-dAT"/>
                             <constraint firstItem="5lf-GI-eoM" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" constant="10" id="t7i-sX-aKH"/>
                             <constraint firstItem="Wxs-7A-C1b" firstAttribute="top" secondItem="2sS-9z-Zid" secondAttribute="bottom" constant="27" id="vMk-iU-y5o"/>
                             <constraint firstItem="mHJ-l9-jis" firstAttribute="top" secondItem="ywn-Bg-LTg" secondAttribute="top" constant="26" id="zCq-Ux-FJ9"/>
@@ -120,6 +121,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AddHomeworkButton" destination="CaQ-fQ-Bkc" id="5gb-Dv-onm"/>
+                        <outlet property="Calendar" destination="Wo7-Rn-cdQ" id="lso-5M-num"/>
                         <outlet property="HomeworkLabel" destination="9YG-it-bBy" id="afb-cq-OBu"/>
                         <outlet property="SearchBar" destination="mHJ-l9-jis" id="24p-RY-3RY"/>
                         <outlet property="TasksLabel" destination="Wxs-7A-C1b" id="81q-re-ZyP"/>
@@ -137,6 +139,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JMd-Q4-pgb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -164,9 +167,8 @@
             <point key="canvasLocation" x="1202.8985507246377" y="585.9375"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
