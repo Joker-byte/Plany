@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YG-it-bBy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YG-it-bBy" userLabel="homework Label">
                                 <rect key="frame" x="20" y="185" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,18 +47,18 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-l9-jis">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-l9-jis" userLabel="search Bar">
                                 <rect key="frame" x="0.0" y="114" width="352" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxs-7A-C1b">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxs-7A-C1b" userLabel="tasks Label">
                                 <rect key="frame" x="20" y="384" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5lf-GI-eoM">
-                                <rect key="frame" x="10" y="442" width="394" height="70"/>
+                                <rect key="frame" x="10" y="442" width="404" height="54"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RoH-pT-dVD">
                                     <size key="itemSize" width="326" height="49"/>
@@ -68,7 +68,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="taskCell" id="G2Q-Jh-NEa">
-                                        <rect key="frame" x="34" y="0.0" width="326" height="49"/>
+                                        <rect key="frame" x="39" y="0.0" width="326" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ogz-OS-W68">
                                             <rect key="frame" x="0.0" y="0.0" width="326" height="49"/>
@@ -78,7 +78,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo7-Rn-cdQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo7-Rn-cdQ" userLabel="calendar">
                                 <rect key="frame" x="362" y="126" width="32" height="34.5"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
@@ -86,7 +86,7 @@
                                     <constraint firstAttribute="width" constant="32" id="eY2-AZ-kxL"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-fQ-Bkc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-fQ-Bkc" userLabel="add Homework Button">
                                 <rect key="frame" x="357" y="185" width="30" height="34"/>
                             </button>
                         </subviews>
@@ -96,7 +96,7 @@
                             <constraint firstItem="CaQ-fQ-Bkc" firstAttribute="top" secondItem="Wo7-Rn-cdQ" secondAttribute="bottom" constant="24.5" id="1QB-5X-zW8"/>
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="2sS-9z-Zid" secondAttribute="trailing" constant="174" id="4yn-6O-kjx"/>
                             <constraint firstItem="5lf-GI-eoM" firstAttribute="top" secondItem="Wxs-7A-C1b" secondAttribute="bottom" constant="37" id="57C-vA-8ZI"/>
-                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="bottom" secondItem="5lf-GI-eoM" secondAttribute="bottom" constant="301" id="D7C-Db-3cW"/>
+                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="bottom" secondItem="5lf-GI-eoM" secondAttribute="bottom" constant="317" id="D7C-Db-3cW"/>
                             <constraint firstItem="Wo7-Rn-cdQ" firstAttribute="leading" secondItem="mHJ-l9-jis" secondAttribute="trailing" constant="10" id="FCJ-vj-cgm"/>
                             <constraint firstItem="mHJ-l9-jis" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" id="JRd-yf-yBc"/>
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="CaQ-fQ-Bkc" secondAttribute="trailing" constant="27" id="Jgi-Ao-5zE"/>
@@ -105,7 +105,7 @@
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wxs-7A-C1b" secondAttribute="trailing" symbolic="YES" id="UlB-tc-mb9"/>
                             <constraint firstItem="Wo7-Rn-cdQ" firstAttribute="top" secondItem="ywn-Bg-LTg" secondAttribute="top" constant="38" id="e7E-ds-sie"/>
                             <constraint firstItem="9YG-it-bBy" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" constant="20" id="i7R-bb-0Xc"/>
-                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="5lf-GI-eoM" secondAttribute="trailing" constant="10" id="k81-s2-LrE"/>
+                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="5lf-GI-eoM" secondAttribute="trailing" id="k81-s2-LrE"/>
                             <constraint firstItem="2sS-9z-Zid" firstAttribute="top" secondItem="9YG-it-bBy" secondAttribute="bottom" constant="23" id="l2J-el-cwL"/>
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="Wo7-Rn-cdQ" secondAttribute="trailing" constant="20" id="md4-IY-i3y"/>
                             <constraint firstItem="2sS-9z-Zid" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" id="oEa-l8-gWl"/>
@@ -120,11 +120,11 @@
                     <navigationItem key="navigationItem" id="DZh-fV-Fv2"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="AddHomeworkButton" destination="CaQ-fQ-Bkc" id="5gb-Dv-onm"/>
-                        <outlet property="Calendar" destination="Wo7-Rn-cdQ" id="lso-5M-num"/>
-                        <outlet property="HomeworkLabel" destination="9YG-it-bBy" id="afb-cq-OBu"/>
-                        <outlet property="SearchBar" destination="mHJ-l9-jis" id="24p-RY-3RY"/>
-                        <outlet property="TasksLabel" destination="Wxs-7A-C1b" id="81q-re-ZyP"/>
+                        <outlet property="addHomeworkButton" destination="CaQ-fQ-Bkc" id="9uN-XY-DQZ"/>
+                        <outlet property="calendar" destination="Wo7-Rn-cdQ" id="HLe-gU-Tfg"/>
+                        <outlet property="homeworkLabel" destination="9YG-it-bBy" id="lks-2M-zc9"/>
+                        <outlet property="searchBar" destination="mHJ-l9-jis" id="Oob-tK-rZm"/>
+                        <outlet property="tasksLabel" destination="Wxs-7A-C1b" id="rPA-Br-RKx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sak-Lb-Vt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
