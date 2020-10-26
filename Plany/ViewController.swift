@@ -47,11 +47,9 @@ class ViewController: UIViewController {
         
         
         let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-        if #available(iOS 13.0, *) {
-            mioButton.setImage(UIImage(systemName: "person.fill"), for: .normal)
-        } else {
-            // Fallback on earlier versions
-        }
+       
+            mioButton.setImage(UIImage(named: "PersonIcon"), for: .normal)
+        
         mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
         mioButton.tintColor = .black
         mioButton.frame.size.height = 40
