@@ -87,7 +87,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-fQ-Bkc" userLabel="add Homework Button">
-                                <rect key="frame" x="357" y="185" width="30" height="34"/>
+                                <rect key="frame" x="345" y="185" width="30" height="34"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ywn-Bg-LTg"/>
@@ -99,7 +99,7 @@
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="bottom" secondItem="5lf-GI-eoM" secondAttribute="bottom" constant="317" id="D7C-Db-3cW"/>
                             <constraint firstItem="Wo7-Rn-cdQ" firstAttribute="leading" secondItem="mHJ-l9-jis" secondAttribute="trailing" constant="10" id="FCJ-vj-cgm"/>
                             <constraint firstItem="mHJ-l9-jis" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" id="JRd-yf-yBc"/>
-                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="CaQ-fQ-Bkc" secondAttribute="trailing" constant="27" id="Jgi-Ao-5zE"/>
+                            <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" secondItem="CaQ-fQ-Bkc" secondAttribute="trailing" constant="39" id="Jgi-Ao-5zE"/>
                             <constraint firstItem="9YG-it-bBy" firstAttribute="top" secondItem="mHJ-l9-jis" secondAttribute="bottom" constant="15" id="M9M-yZ-Rko"/>
                             <constraint firstItem="mHJ-l9-jis" firstAttribute="leading" secondItem="ywn-Bg-LTg" secondAttribute="leading" id="O3J-Lu-spj"/>
                             <constraint firstItem="ywn-Bg-LTg" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wxs-7A-C1b" secondAttribute="trailing" symbolic="YES" id="UlB-tc-mb9"/>
