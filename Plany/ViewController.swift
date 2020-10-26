@@ -37,21 +37,33 @@ class ViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     
+    customNavigationButton()
     
-    let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-    
-    mioButton.setImage(UIImage(named: "PersonIcon"), for: .normal)
-    mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
-    mioButton.tintColor = .black
-    mioButton.imageView?.contentMode = .scaleAspectFit
-    
-    navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
     navigationItem.backButtonTitle = "Calendar"
     
     addHomeworkButton.frame.size.height = 22
     addHomeworkButton.frame.size.width = 22
     addHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
     
+  }
+  
+ 
+  
+  @objc func addHomework () {
+    print("homework added")
+  }
+}
+
+extension UIViewController {
+  func customNavigationButton(){
+  let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+  
+  mioButton.setImage(UIImage(named: "PersonIcon"), for: .normal)
+  mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
+  mioButton.tintColor = .black
+  mioButton.imageView?.contentMode = .scaleAspectFit
+  
+  navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
   
   @objc func addTapped () {
@@ -61,14 +73,6 @@ class ViewController: UIViewController {
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
   }
-  
-  
-  @objc func addHomework () {
-    print("homework added")
-  }
-}
-
-extension UIViewController {
   
 }
 
