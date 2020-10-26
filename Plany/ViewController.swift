@@ -65,9 +65,10 @@ class ViewController: UIViewController {
 
         navigationItem.backButtonTitle = "Calendar"
         
-        
-            AddHomeworkButton.setImage(UIImage(named: "add"), for: .normal)
-     
+        AddHomeworkButton.frame.size.height = 22
+        AddHomeworkButton.frame.size.width = 22
+        AddHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
+            
     }
     
     
