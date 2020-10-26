@@ -14,6 +14,7 @@
 		9A07CB6D254175BC000C2B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */; };
 		9A07CB78254175BC000C2B50 /* PlanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB77254175BC000C2B50 /* PlanyTests.swift */; };
 		9A07CB83254175BC000C2B50 /* PlanyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB82254175BC000C2B50 /* PlanyUITests.swift */; };
+		9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50E36A254744F700910B8D /* UiViewController+.swift */; };
 		9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7524922541D03F00BAD0EC /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		9A07CB7E254175BC000C2B50 /* PlanyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07CB82254175BC000C2B50 /* PlanyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanyUITests.swift; sourceTree = "<group>"; };
 		9A07CB84254175BC000C2B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A50E36A254744F700910B8D /* UiViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+.swift"; sourceTree = "<group>"; };
 		9A7524922541D03F00BAD0EC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 		9A07CB5C254175BA000C2B50 /* Plany */ = {
 			isa = PBXGroup;
 			children = (
+				9A50E369254744B700910B8D /* Extension */,
 				9A07CB5D254175BA000C2B50 /* AppDelegate.swift */,
 				9A07CB61254175BA000C2B50 /* ViewController.swift */,
 				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
@@ -126,6 +129,14 @@
 				9A07CB84254175BC000C2B50 /* Info.plist */,
 			);
 			path = PlanyUITests;
+			sourceTree = "<group>";
+		};
+		9A50E369254744B700910B8D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9A50E36A254744F700910B8D /* UiViewController+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +271,7 @@
 			files = (
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,
+				9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */,
 				9A07CB5E254175BA000C2B50 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

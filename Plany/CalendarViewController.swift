@@ -17,10 +17,10 @@ class CalendarViewController: UIViewController {
         navigationItem.rightBarButtonItem =  addButtonEvent
     }
     
-  @objc override func addTapped () {
+  @objc func addTapped () {
         navigationController?.popViewController(animated: true)
     }
-    @objc func addEvent (){
+  @objc func addEvent (){
         
     }
 }

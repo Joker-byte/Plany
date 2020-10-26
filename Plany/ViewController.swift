@@ -31,8 +31,8 @@ class ViewController: UIViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     
-    customNavigationButton(selector: #selector(addTapped))
-    labelNavigation()
+    customNavigationButton(selector: #selector(addTapped), named: "PersonIcon", tintColor: .red)
+    labelNavigation(textColor: .white, text: "Hello \nName Surname")
     
     navigationItem.backButtonTitle = "Calendar"
     
@@ -45,35 +45,12 @@ class ViewController: UIViewController {
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
   }
- 
+  
   @objc func addHomework () {
     print("homework added")
   }
   
 }
 
-extension UIViewController {
-  func customNavigationButton(selector: Selector){
-  let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-  
-  mioButton.setImage(UIImage(named: "PersonIcon"), for: .normal)
-  mioButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
-  mioButton.tintColor = .black
-  mioButton.imageView?.contentMode = .scaleAspectFit
-  
-  navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
-  }
-  
-  func labelNavigation(){
-    let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 32))
-    label.numberOfLines = 2
-    label.text = "Hello \nName surname"
-    label.textColor = .white
-    
-    navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
-  }
-  
- 
-}
 
 
