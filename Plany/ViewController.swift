@@ -22,35 +22,20 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 32))
-    label.numberOfLines = 2
-    label.text = "Hello \nName surname"
-    label.textColor = .white
-    
-    navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
+    addHomeworkButton.frame.size.height = 22
+    addHomeworkButton.frame.size.width = 22
+    addHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
     
     calendar.image = UIImage(named: "CalendarIcon")
-    
-    
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     
     customNavigationButton()
+    labelNavigation()
     
     navigationItem.backButtonTitle = "Calendar"
-    
-    addHomeworkButton.frame.size.height = 22
-    addHomeworkButton.frame.size.width = 22
-    addHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
-    
-  }
-  
- 
-  
-  @objc func addHomework () {
-    print("homework added")
   }
 }
 
@@ -66,12 +51,25 @@ extension UIViewController {
   navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
   
+  func labelNavigation(){
+    let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 32))
+    label.numberOfLines = 2
+    label.text = "Hello \nName surname"
+    label.textColor = .white
+    
+    navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
+  }
+  
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
     }
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
+  }
+ 
+  @objc func addHomework () {
+    print("homework added")
   }
   
 }
