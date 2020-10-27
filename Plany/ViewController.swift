@@ -22,24 +22,34 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    addHomeworkButton.frame = CGRect(x: 0, y: 0, width: 8, height: 8)
+    addHomeworkButton.frame = CGRect(x: 0, y: 0, width: 12, height: 12)
     addHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
+    addHomeworkButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     
     calendar.image = UIImage(named: "CalendarIcon")
+    
   }
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     
-    customNavigationButton(selector: #selector(addTapped), named: "PersonIcon", tintColor: .red)
+    customNavigationButton(selector: #selector(addTapped2), named: "PersonIcon", tintColor: .red)
     labelNavigation(textColor: .white, text: "Hello \nName Surname")
     
     navigationItem.backButtonTitle = "Calendar"
     
   }
-  
+
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
+      return
+    }
+    vc.modalPresentationStyle = .overFullScreen
+    navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  @objc func addTapped2 () {
+    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController  else {
       return
     }
     vc.modalPresentationStyle = .overFullScreen

@@ -8,19 +8,19 @@
 import UIKit
 
 class CalendarViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let addButtonEvent = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEvent))
-        
-        navigationItem.rightBarButtonItem =  addButtonEvent
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    let addButtonEvent = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addEvent))
+    
+    navigationItem.rightBarButtonItem =  addButtonEvent
+  }
+  
   @objc func addTapped () {
-        navigationController?.popViewController(animated: true)
-    }
+    navigationController?.popViewController(animated: true)
+  }
   @objc func addEvent (){
-        
-    }
+    
+  }
 }
