@@ -32,7 +32,7 @@ extension UIViewController {
   }
   
   func labelNavigation(textColor: UIColor, text: String){
-    let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 32))
+    let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
     label.numberOfLines = 2
     label.text = text
     label.textColor = textColor

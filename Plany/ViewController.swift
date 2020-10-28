@@ -22,24 +22,39 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // il viewdidload viene chiamato solo una volta finche non viene deinizializzata la view
+    
     addHomeworkButton.frame = CGRect(x: 0, y: 0, width: 12, height: 12)
     addHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
     addHomeworkButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
     
     calendar.image = UIImage(named: "CalendarIcon")
     
-  }
-  
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    
     customNavigationButton(selector: #selector(addTapped2), named: "PersonIcon", tintColor: .red)
     labelNavigation(textColor: .white, text: "Hello \nName Surname")
     
     navigationItem.backButtonTitle = "Calendar"
     
+    // observer 
+    
+    NotificationCenter.default.addObserver(forName: NSNotification.Name("updateName"),
+                                           
+                                           object: nil, queue: .main) { (notification) in
+      
+      guard let nameNotification = notification.object as? String else {
+        return
+      }
+      self.labelNavigation(textColor: .white, text: "Hello \n" + nameNotification)
+    }
   }
-
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
+    // ogni volta che si aggiorna la view
+    
+  }
+  
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
