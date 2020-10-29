@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
   
   @IBOutlet weak var ProfileImage: UIImageView!
   
@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
   
   @IBOutlet weak var changeImage: UIButton!
   
+  let imagePicker = UIImagePickerController()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,6 +30,10 @@ class ProfileViewController: UIViewController {
     
     nameField.text = "My Name"
     surnameField.text = "My Sur"
+    
+    ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
+    imagePicker.delegate = self
+    imagePicker.allowsEditing = true
     
     // Do any additional setup after loading the view.
   }
@@ -47,6 +52,32 @@ class ProfileViewController: UIViewController {
     let resultTextField = name + " " + surname
     NotificationCenter.default.post(name: NSNotification.Name("updateName"), object: resultTextField)
     
+  }
+  
+  @IBAction func didTapAddPhotoButton(_ sender: Any) {
+      
+      let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+      
+      alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { (button) in
+          self.imagePicker.sourceType = .photoLibrary
+          self.present(self.imagePicker, animated: true, completion: nil)
+      }))
+      
+      alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (button) in
+          self.imagePicker.sourceType = .camera
+          self.present(self.imagePicker, animated: true, completion: nil)
+      }))
+      
+      alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+      
+      present(alert, animated: true, completion: nil)
+  }
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+      guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
+    
+      ProfileImage.image = pickedImage
+      
+      dismiss(animated: true, completion: nil)
   }
 }
 

@@ -194,6 +194,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PIs-v8-4dy">
                                 <rect key="frame" x="20" y="59" width="101" height="101"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="cM0-GL-lm6"/>
                                     <constraint firstAttribute="width" constant="101" id="egL-hf-bw2"/>
                                 </constraints>
                             </imageView>
@@ -223,13 +224,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-ah-S0t">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-ah-S0t">
                                 <rect key="frame" x="55" y="94" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCp-47-W59">
-                                <rect key="frame" x="36" y="76" width="68" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCp-47-W59">
+                                <rect key="frame" x="20" y="59" width="101" height="101"/>
+                                <connections>
+                                    <action selector="didTapAddPhotoButton:" destination="wBW-xo-S3V" eventType="touchUpInside" id="3sJ-xS-Rmo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ccw-Sn-Wae"/>
@@ -243,14 +245,22 @@
                             <constraint firstItem="W7X-uv-51N" firstAttribute="leading" secondItem="5Kv-pc-VM7" secondAttribute="leading" id="Fsz-kH-pMG"/>
                             <constraint firstItem="5Kv-pc-VM7" firstAttribute="top" secondItem="W7X-uv-51N" secondAttribute="bottom" constant="15" id="Hbw-EF-q7m"/>
                             <constraint firstItem="PIs-v8-4dy" firstAttribute="leading" secondItem="FT9-gN-Oql" secondAttribute="leadingMargin" id="Il5-84-2aL"/>
+                            <constraint firstItem="Prz-05-YNW" firstAttribute="top" secondItem="BCp-47-W59" secondAttribute="bottom" constant="8" symbolic="YES" id="JV1-LT-Pg2"/>
                             <constraint firstItem="fMV-Fe-X7Z" firstAttribute="top" secondItem="A3Y-Y6-LFb" secondAttribute="bottom" constant="2" id="R13-gI-6es"/>
                             <constraint firstItem="A3Y-Y6-LFb" firstAttribute="top" secondItem="Ccw-Sn-Wae" secondAttribute="top" constant="30" id="RpD-ML-0GY"/>
                             <constraint firstItem="Ccw-Sn-Wae" firstAttribute="bottom" secondItem="Prz-05-YNW" secondAttribute="bottom" constant="19" id="VWa-9y-OeY"/>
+                            <constraint firstItem="Fv9-ah-S0t" firstAttribute="top" secondItem="Ccw-Sn-Wae" secondAttribute="top" constant="50" id="VkT-h1-0pk"/>
                             <constraint firstItem="W7X-uv-51N" firstAttribute="top" secondItem="Ccw-Sn-Wae" secondAttribute="top" constant="38" id="ZXQ-u7-WkB"/>
+                            <constraint firstItem="BCp-47-W59" firstAttribute="centerX" secondItem="Fv9-ah-S0t" secondAttribute="centerX" id="am9-zn-en2"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="leading" secondItem="Ccw-Sn-Wae" secondAttribute="leading" constant="10" id="c0A-QR-2yJ"/>
+                            <constraint firstItem="BCp-47-W59" firstAttribute="trailing" secondItem="PIs-v8-4dy" secondAttribute="trailing" id="cf8-KI-VdU"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="top" secondItem="fMV-Fe-X7Z" secondAttribute="bottom" constant="24" id="eCR-mV-FNv"/>
+                            <constraint firstItem="Fv9-ah-S0t" firstAttribute="leading" secondItem="Ccw-Sn-Wae" secondAttribute="leading" constant="55" id="fcx-3i-oAh"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="top" secondItem="PIs-v8-4dy" secondAttribute="bottom" constant="8" symbolic="YES" id="fup-9w-izC"/>
+                            <constraint firstItem="BCp-47-W59" firstAttribute="leading" secondItem="PIs-v8-4dy" secondAttribute="leading" id="g2s-bo-xy5"/>
+                            <constraint firstItem="BCp-47-W59" firstAttribute="centerY" secondItem="Fv9-ah-S0t" secondAttribute="centerY" id="kHp-0z-jtA"/>
                             <constraint firstItem="A3Y-Y6-LFb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W7X-uv-51N" secondAttribute="trailing" constant="8" symbolic="YES" id="q7P-gq-5pb"/>
+                            <constraint firstItem="BCp-47-W59" firstAttribute="top" secondItem="PIs-v8-4dy" secondAttribute="top" id="t0H-dm-OrJ"/>
                             <constraint firstItem="PIs-v8-4dy" firstAttribute="top" secondItem="Ccw-Sn-Wae" secondAttribute="top" constant="15" id="zLD-Ib-RRA"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="centerX" secondItem="FT9-gN-Oql" secondAttribute="centerX" id="zwo-f0-9qR"/>
                         </constraints>
