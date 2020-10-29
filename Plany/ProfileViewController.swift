@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   @IBOutlet weak var ProfileImage: UIImageView!
   
@@ -19,8 +19,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
   
   let imagePicker = UIImagePickerController()
   
-  let defaults = UserDefaults.standard
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -31,38 +29,16 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     //ProfileImage.contentMode = UIView.ContentMode.scaleAspectFill
     customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
     
-    //    nameField.text = "My Name"
-    //    surnameField.text = "My Sur"
-    
-    nameField.text = defaults.string(forKey: "UserName")
-    surnameField.text = defaults.string(forKey: "UserSurname")
+    nameField.placeholder = UserDefaults.standard.string(forKey: "UserName") ?? ""
+    surnameField.placeholder = UserDefaults.standard.string(forKey: "UserSurname") ?? ""
     
     ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
-    
-    // Do any additional setup after loading the view.
-    
-    //    let defaults = UserDefaults.standard
-    
-    guard let nome = defaults.object(forKey: "UserName") else {
-      return
-    }
-    
-    guard let cognome = defaults.object(forKey: "UserSurname") else {
-      return
-    }
-    
-    print(nome as! String)
-    // nameField.text = nome as? String
-    // surnameField.text = cognome as? String
-    
-    print(cognome as! String)
-    
+          
   }
-  //override func viewDidDisappear(_ animated: Bool) {
-  // super.viewDidDisappear(animated)
   
+
   @objc func saveNameSurname () {
     guard let name = nameField.text,
           let surname = surnameField.text else {
@@ -82,21 +58,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
   
   
   @objc func saveInfo_clicked() {
-    guard !self.nameField.text!.isEmpty else {
-      return
-    }
-    
-    guard !self.surnameField.text!.isEmpty else {
-      return
-    }
-    
-    let nome = self.nameField.text!
-    let cognome = self.surnameField.text!
-    
-    let defaults = UserDefaults.standard
-    
-    defaults.set(nome, forKey: "UserName")
-    defaults.set(cognome, forKey: "UserSurname")
+
+    guard let name = nameField.text,
+          let surname = surnameField.text,
+          name != "",
+          surname != "" else { return }
+        
+    UserDefaults.standard.set(name, forKey: "UserName")
+    UserDefaults.standard.set(surname, forKey: "UserSurname")
     
   }
   
@@ -119,7 +88,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     
     present(alert, animated: true, completion: nil)
   }
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
     guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
     
     ProfileImage.image = pickedImage
@@ -128,12 +98,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
   }
 }
 
+
 extension ProfileViewController {
-  
-  
-  
-  
-  
   
   func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
     let saveButton = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))

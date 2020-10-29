@@ -199,8 +199,11 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A3Y-Y6-LFb">
-                                <rect key="frame" x="224" y="74" width="170" height="34"/>
+                                <rect key="frame" x="224" y="75.5" width="170" height="34"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="8we-jH-Fv8"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -212,8 +215,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMV-Fe-X7Z">
-                                <rect key="frame" x="224" y="110" width="170" height="34"/>
+                                <rect key="frame" x="224" y="111.5" width="170" height="34"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="pAS-ar-otO"/>
+                                </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -237,19 +243,18 @@
                             <constraint firstItem="fMV-Fe-X7Z" firstAttribute="leading" secondItem="5Kv-pc-VM7" secondAttribute="trailing" constant="16" id="1kK-n0-49h"/>
                             <constraint firstItem="A3Y-Y6-LFb" firstAttribute="trailing" secondItem="FT9-gN-Oql" secondAttribute="trailingMargin" id="2yS-V3-3JD"/>
                             <constraint firstItem="A3Y-Y6-LFb" firstAttribute="leading" secondItem="fMV-Fe-X7Z" secondAttribute="leading" id="4oO-Nm-qCh"/>
+                            <constraint firstItem="A3Y-Y6-LFb" firstAttribute="centerY" secondItem="W7X-uv-51N" secondAttribute="centerY" id="4pd-ND-dzB"/>
                             <constraint firstItem="A3Y-Y6-LFb" firstAttribute="trailing" secondItem="fMV-Fe-X7Z" secondAttribute="trailing" id="8hy-26-t2C"/>
                             <constraint firstItem="W7X-uv-51N" firstAttribute="leading" secondItem="PIs-v8-4dy" secondAttribute="trailing" constant="14" id="Ah4-5A-8tM"/>
+                            <constraint firstItem="fMV-Fe-X7Z" firstAttribute="centerY" secondItem="5Kv-pc-VM7" secondAttribute="centerY" id="Fg2-gy-bV4"/>
                             <constraint firstItem="W7X-uv-51N" firstAttribute="leading" secondItem="5Kv-pc-VM7" secondAttribute="leading" id="Fsz-kH-pMG"/>
                             <constraint firstItem="5Kv-pc-VM7" firstAttribute="top" secondItem="W7X-uv-51N" secondAttribute="bottom" constant="15" id="Hbw-EF-q7m"/>
                             <constraint firstItem="PIs-v8-4dy" firstAttribute="leading" secondItem="FT9-gN-Oql" secondAttribute="leadingMargin" id="Il5-84-2aL"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="top" secondItem="BCp-47-W59" secondAttribute="bottom" constant="8" symbolic="YES" id="JV1-LT-Pg2"/>
-                            <constraint firstItem="fMV-Fe-X7Z" firstAttribute="top" secondItem="A3Y-Y6-LFb" secondAttribute="bottom" constant="2" id="R13-gI-6es"/>
-                            <constraint firstItem="A3Y-Y6-LFb" firstAttribute="top" secondItem="Ccw-Sn-Wae" secondAttribute="top" constant="30" id="RpD-ML-0GY"/>
                             <constraint firstItem="Ccw-Sn-Wae" firstAttribute="bottom" secondItem="Prz-05-YNW" secondAttribute="bottom" constant="19" id="VWa-9y-OeY"/>
                             <constraint firstItem="W7X-uv-51N" firstAttribute="top" secondItem="Ccw-Sn-Wae" secondAttribute="top" constant="38" id="ZXQ-u7-WkB"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="leading" secondItem="Ccw-Sn-Wae" secondAttribute="leading" constant="10" id="c0A-QR-2yJ"/>
                             <constraint firstItem="BCp-47-W59" firstAttribute="trailing" secondItem="PIs-v8-4dy" secondAttribute="trailing" id="cf8-KI-VdU"/>
-                            <constraint firstItem="Prz-05-YNW" firstAttribute="top" secondItem="fMV-Fe-X7Z" secondAttribute="bottom" constant="24" id="eCR-mV-FNv"/>
                             <constraint firstItem="Prz-05-YNW" firstAttribute="top" secondItem="PIs-v8-4dy" secondAttribute="bottom" constant="8" symbolic="YES" id="fup-9w-izC"/>
                             <constraint firstItem="BCp-47-W59" firstAttribute="leading" secondItem="PIs-v8-4dy" secondAttribute="leading" id="g2s-bo-xy5"/>
                             <constraint firstItem="A3Y-Y6-LFb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="W7X-uv-51N" secondAttribute="trailing" constant="8" symbolic="YES" id="q7P-gq-5pb"/>
