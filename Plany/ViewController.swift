@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     
     // il viewdidload viene chiamato solo una volta finche non viene deinizializzata la view
     
+    
+    UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+
+    
     addHomeworkButton.frame = CGRect(x: 0, y: 0, width: 12, height: 12)
     addHomeworkButton.setImage(UIImage(named: "Add"), for: .normal)
     addHomeworkButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)

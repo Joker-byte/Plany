@@ -50,7 +50,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-l9-jis" userLabel="search Bar">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-l9-jis" userLabel="search Bar">
                                 <rect key="frame" x="0.0" y="114" width="352" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="ZM1-Vz-sC7"/>

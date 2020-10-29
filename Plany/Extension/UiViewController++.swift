@@ -10,11 +10,4 @@ import UIKit
 extension UIViewController{
   
   
-  
-  
- 
-
-  
-  
-  
 }

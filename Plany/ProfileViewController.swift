@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController {
   
   @IBOutlet weak var changeImage: UIButton!
   
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -25,7 +26,7 @@ class ProfileViewController: UIViewController {
     // ProfileImage.clipsToBounds = true
     //ProfileImage.contentMode = UIView.ContentMode.scaleAspectFill
     customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
-   
+    
     nameField.text = "My Name"
     surnameField.text = "My Sur"
     
@@ -33,19 +34,19 @@ class ProfileViewController: UIViewController {
   }
   //override func viewDidDisappear(_ animated: Bool) {
   // super.viewDidDisappear(animated)
-    
+  
   @objc func saveNameSurname () {
     guard let name = nameField.text,
           let surname = surnameField.text else {
       return
     }
-
+    
     nameField.text = name
     surnameField.text = surname
-
+    
     let resultTextField = name + " " + surname
     NotificationCenter.default.post(name: NSNotification.Name("updateName"), object: resultTextField)
-  
+    
   }
 }
 
@@ -53,7 +54,7 @@ extension ProfileViewController {
   
   func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
     let saveButton = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
-        
+    
     saveButton.setImage(UIImage(named: named), for: .normal)
     saveButton.frame.size.height = 14
     saveButton.frame.size.width = 14
@@ -73,7 +74,7 @@ extension ProfileViewController {
       saveButton.imageView?.tintColor = cistaColor
       
     }
-  
+    
     saveButton.imageView?.contentMode = .scaleAspectFit
     navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: saveButton)]
   }
