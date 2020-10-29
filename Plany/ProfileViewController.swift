@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
   
   @IBOutlet weak var surnameField: UITextField!
   
+  @IBOutlet weak var changeImage: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -24,6 +25,9 @@ class ProfileViewController: UIViewController {
     // ProfileImage.clipsToBounds = true
     //ProfileImage.contentMode = UIView.ContentMode.scaleAspectFill
     customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
+   
+    nameField.text = "My Name"
+    surnameField.text = "My Sur"
     
     // Do any additional setup after loading the view.
   }
@@ -36,8 +40,12 @@ class ProfileViewController: UIViewController {
       return
     }
 
+    nameField.text = name
+    surnameField.text = surname
+
     let resultTextField = name + " " + surname
     NotificationCenter.default.post(name: NSNotification.Name("updateName"), object: resultTextField)
+  
   }
 }
 
