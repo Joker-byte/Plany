@@ -33,13 +33,8 @@ class ViewController: UIViewController {
       guard let nameNotification = notification.object as? String else {
         return
       }
-
       self.labelNavigation(textColor: .white, text: "Hello \n" + nameNotification)
-      UserDefaults.standard.set(nameNotification, forKey: "User")
     }
   }
-  override func viewDidAppear(_ animated: Bool) {
-    super .viewDidAppear(animated)
-
-  }
+ 
 }

@@ -4,7 +4,6 @@
 //
 //  Created by Gianluca Dubioso on 27/10/2020.
 //
-
 import UIKit
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
@@ -40,6 +39,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     
     let resultTextField = name + " " + surname
     NotificationCenter.default.post(name: NSNotification.Name("updateName"), object: resultTextField)
+    
+    let resulted = "Hello \n" + resultTextField
+    UserDefaults.standard.set(resulted, forKey: "User")
   
     saveInfo_clicked()
   }
@@ -66,7 +68,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
       self.imagePicker.sourceType = .camera
       self.present(self.imagePicker, animated: true, completion: nil)
     }))
-    
+
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     
     present(alert, animated: true, completion: nil)
@@ -93,11 +95,10 @@ extension ProfileViewController {
     if let ciSta = selector {
       
       saveButton.addTarget(self, action: ciSta, for: .touchUpInside)
-      saveButton.setImage(UIImage.init(named: "SavedIcon"), for: UIControl.State.highlighted)//When highlighted
-      saveButton.setImage(UIImage.init(named: "SavedIcon"), for: UIControl.State.selected)//When selected
-      
+      saveButton.setImage(UIImage.init(named: "SavedIcon"), for: UIControl.State.highlighted)
+      saveButton.setImage(UIImage.init(named: "SavedIcon"), for: UIControl.State.selected)
     }
-    // mioButton.tintColor = tintColor
+    
     if let cistaColor = tintColor {
       
       saveButton.imageView?.image = saveButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
