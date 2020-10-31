@@ -18,13 +18,12 @@ extension UIViewController {
       
       mioButton.addTarget(self, action: ciSta, for: .touchUpInside)
     }
-    // mioButton.tintColor = tintColor
     
     if let cistaColor = tintColor {
       
       mioButton.imageView?.image = mioButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
       mioButton.imageView?.tintColor = cistaColor
-      
+    
     }
     mioButton.imageView?.contentMode = .scaleAspectFit
     
@@ -40,7 +39,25 @@ extension UIViewController {
     navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
   }
   func customViewButton(){
-    
+  }
+  @objc func addTapped () {
+    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
+      return
+    }
+    vc.modalPresentationStyle = .overFullScreen
+    navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  @objc func addTapped2 () {
+    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController  else {
+      return
+    }
+    vc.modalPresentationStyle = .overFullScreen
+    navigationController?.pushViewController(vc, animated: true)
+  }
+  
+  @objc func addHomework () {
+    print("homework added")
   }
   
 }
