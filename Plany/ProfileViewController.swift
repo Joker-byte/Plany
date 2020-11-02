@@ -34,7 +34,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
   }
   @objc func loadingImage(){
     // Load the image
-    if let imageURL = UserDefaults.standard.url(forKey: "SelectedImage") {
+    if let imageURL = UserDefaults.standard.url(forKey: "ProfileImage") {
       if let data = NSData(contentsOf: imageURL) as NSData? {
         self.ProfileImage.image = UIImage(data: data as Data)
       }
@@ -94,7 +94,7 @@ extension ProfileViewController {
     ProfileImage.image = pickedImage
     
     if let imageURL = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.imageURL.rawValue)] as! URL? {
-      UserDefaults.standard.set(imageURL, forKey: "SelectedImage")
+      UserDefaults.standard.set(imageURL, forKey: "ProfileImage")
       UserDefaults.standard.synchronize()
       
       dismiss(animated: true, completion: nil)
