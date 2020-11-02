@@ -17,6 +17,7 @@
 		9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50E36A254744F700910B8D /* UiViewController+.swift */; };
 		9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7524922541D03F00BAD0EC /* CalendarViewController.swift */; };
 		9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9040E42547A11F007FAC33 /* ProfileViewController.swift */; };
+		9AA8EAA6255018A5003B3342 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8EAA5255018A5003B3342 /* Priority.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		9A50E36A254744F700910B8D /* UiViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+.swift"; sourceTree = "<group>"; };
 		9A7524922541D03F00BAD0EC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9A9040E42547A11F007FAC33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9AA8EAA5255018A5003B3342 /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				9A50E369254744B700910B8D /* Extension */,
 				9A07CB61254175BA000C2B50 /* ViewController.swift */,
 				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
+				9AA8EAA5255018A5003B3342 /* Priority.swift */,
 				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
 				9A07CB63254175BA000C2B50 /* Main.storyboard */,
 				9A07CB69254175BC000C2B50 /* Assets.xcassets */,
@@ -277,6 +280,7 @@
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,
 				9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */,
 				9A07CB5E254175BA000C2B50 /* AppDelegate.swift in Sources */,
+				9AA8EAA6255018A5003B3342 /* Priority.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

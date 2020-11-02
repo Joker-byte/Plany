@@ -18,12 +18,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
   override func viewDidLoad() {
     super.viewDidLoad()
     ProfileImage.image = UIImage(named: "PersonIcon")
+    ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
+    ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
     
     loadingImage()
-    
-    ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
-    ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
-    
+
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
     
