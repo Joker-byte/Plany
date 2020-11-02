@@ -17,8 +17,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
   
   override func viewDidLoad() {
     super.viewDidLoad()
-        
     ProfileImage.image = UIImage(named: "PersonIcon")
+    
+    loadingImage()
+    
     ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
     ProfileImage.layer.cornerRadius = ProfileImage.frame.size.width/2
     
@@ -30,7 +32,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     
     customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
   }
-
+  @objc func loadingImage(){
+    // Load the image
+    if let imageURL = UserDefaults.standard.url(forKey: "SelectedImage") {
+      if let data = NSData(contentsOf: imageURL) as NSData? {
+        self.ProfileImage.image = UIImage(data: data as Data)
+      }
+    }
+  }
+  
   @objc func saveNameSurname () {
     guard let name = nameField.text,
           let surname = surnameField.text else {
@@ -42,10 +52,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     
     let resulted = "Hello \n" + resultTextField
     UserDefaults.standard.set(resulted, forKey: "User")
-  
+    
     saveInfo_clicked()
+    
   }
-  
   @objc func saveInfo_clicked() {
     let nome = nameField.text
     let cognome = surnameField.text
@@ -68,21 +78,27 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
       self.imagePicker.sourceType = .camera
       self.present(self.imagePicker, animated: true, completion: nil)
     }))
-
-    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     
+    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     present(alert, animated: true, completion: nil)
   }
 }
 
 extension ProfileViewController {
   
+  
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return }
-    
+    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
+      
+    }
     ProfileImage.image = pickedImage
     
-    dismiss(animated: true, completion: nil)
+    if let imageURL = info[UIImagePickerController.InfoKey(rawValue: UIImagePickerController.InfoKey.imageURL.rawValue)] as! URL? {
+      UserDefaults.standard.set(imageURL, forKey: "SelectedImage")
+      UserDefaults.standard.synchronize()
+      
+      dismiss(animated: true, completion: nil)
+    }
   }
   
   func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
@@ -109,3 +125,4 @@ extension ProfileViewController {
     navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: saveButton)]
   }
 }
+
