@@ -6,7 +6,18 @@
 //
 import UIKit
 
-class ViewController: UIViewController {
+//class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+//  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//    return
+//  }
+//
+//  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//    let cell = homeworkCollection.dequeueReusableCell(withReuseIdentifier: "homeCollection", for: indexPath) as! CollectionViewCell
+//   cell.image1.layer.cornerRadius = 10.0
+//    ///cell.image1.image = imageArray[indexPath.row]
+//
+//    return cell
+//  }
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var addHomeworkButton: UIButton!
@@ -14,8 +25,16 @@ class ViewController: UIViewController {
   @IBOutlet weak var tasksLabel: UILabel!
   @IBOutlet weak var calendar: UIImageView!
   
+  @IBOutlet weak var homeworkCollection: UICollectionView!
+  
+  
+  @IBOutlet weak var titleText: UILabel!
+  @IBOutlet weak var tagText: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
     // il viewdidload viene chiamato solo una volta finche non viene deinizializzata la view
     UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     
@@ -38,5 +57,13 @@ class ViewController: UIViewController {
       }
       self.labelNavigation(textColor: .white, text: "Hello \n" + nameNotification)
     }
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    titleText.text = UserDefaults.standard.string(forKey: "TitleText")
+    tagText.text = UserDefaults.standard.string(forKey: "TagText")
+    
   }
 }

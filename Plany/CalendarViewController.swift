@@ -15,8 +15,16 @@ class CalendarViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveTitleTag))]
     
   }
   
-  
+  @objc func saveTitleTag() {
+    let titleTx = titleTextView.text
+    let tagTx = tagTextField.text
+    
+    UserDefaults.standard.set(titleTx, forKey: "TitleText")
+    UserDefaults.standard.set(tagTx, forKey: "TagText")
+    
+  }
 }
