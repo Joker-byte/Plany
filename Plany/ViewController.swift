@@ -6,18 +6,19 @@
 //
 import UIKit
 
-//class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
-//  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//    return
-//  }
-//
-//  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//    let cell = homeworkCollection.dequeueReusableCell(withReuseIdentifier: "homeCollection", for: indexPath) as! CollectionViewCell
-//   cell.image1.layer.cornerRadius = 10.0
-//    ///cell.image1.image = imageArray[indexPath.row]
-//
-//    return cell
-//  }
+class ViewController: UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 0
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = homeworkCollection.dequeueReusableCell(withReuseIdentifier: "homeCollection", for: indexPath) as! CollectionViewCell
+   cell.image1.layer.cornerRadius = 10.0
+    ///cell.image1.image = imageArray[indexPath.row]
+    
+    return cell
+  }
+  
   
   @IBOutlet weak var searchBar: UISearchBar!
   @IBOutlet weak var addHomeworkButton: UIButton!
@@ -66,4 +67,5 @@ import UIKit
     tagText.text = UserDefaults.standard.string(forKey: "TagText")
     
   }
+  
 }
