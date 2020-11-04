@@ -1,6 +1,6 @@
 //
 //  UiViewController+.swift
-//  Plany
+//  Plany/
 //
 //  Created by Gianluca Dubioso on 26/10/2020.
 //
@@ -8,13 +8,22 @@
 import UIKit
 
 extension UIViewController {
-  func customNavigationButton(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
-    let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
+  func customNavigationButton(selector: Selector? = nil, named: String? = nil, tintColor: UIColor? = nil, dataButton: Data? = nil){
+    let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
     
-    mioButton.setImage(UIImage(named: named), for: .normal)
     
-    mioButton.frame.size.height = 14
-    mioButton.frame.size.width = 14
+    if let namedExist = named {
+      
+      mioButton.setImage(UIImage(named: namedExist), for: .normal)
+      
+    }
+   if let dataExist = dataButton {
+    
+   // mioButton.setImage(UIImage(data: dataExist), for: .normal)
+    mioButton.setImage(UIImage(data: dataExist, scale: CGFloat(20)), for: .normal)
+   
+   }
+    
     if let ciSta = selector {
       
       mioButton.addTarget(self, action: ciSta, for: .touchUpInside)
@@ -26,9 +35,10 @@ extension UIViewController {
       mioButton.imageView?.tintColor = cistaColor
       
     }
+  
     mioButton.imageView?.contentMode = .scaleAspectFit
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mioButton)
     
-    navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
   
   func labelNavigation(textColor: UIColor, text: String){
@@ -36,11 +46,10 @@ extension UIViewController {
     label.numberOfLines = 2
     label.text = text
     label.textColor = textColor
-    
+
     navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
   }
-  func customViewButton(){
-  }
+  
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
@@ -48,17 +57,13 @@ extension UIViewController {
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
   }
-  
+
   @objc func addTapped2 () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController  else {
       return
     }
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
-  }
-  
-  @objc func addHomework () {
-    print("homework added")
   }
   
 }

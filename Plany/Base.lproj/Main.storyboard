@@ -327,6 +327,7 @@
                         <outlet property="ProfileImage" destination="PIs-v8-4dy" id="VQf-DE-axY"/>
                         <outlet property="changeImage" destination="BCp-47-W59" id="We5-9Z-lba"/>
                         <outlet property="nameField" destination="A3Y-Y6-LFb" id="uF8-gu-1GV"/>
+                        <outlet property="profileImage" destination="PIs-v8-4dy" id="HSZ-JP-sB6"/>
                         <outlet property="surnameField" destination="fMV-Fe-X7Z" id="6ix-gf-EoZ"/>
                     </connections>
                 </viewController>

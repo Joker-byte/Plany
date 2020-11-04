@@ -15,8 +15,8 @@ class CalendarViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveTitleTag))]
-    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveTitleTag))
+
   }
   
   @objc func saveTitleTag() {
@@ -26,5 +26,12 @@ class CalendarViewController: UIViewController {
     UserDefaults.standard.set(titleTx, forKey: "TitleText")
     UserDefaults.standard.set(tagTx, forKey: "TagText")
     
+    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe") as? ViewController  else {
+      return
+    }
+    vc.modalPresentationStyle = .overFullScreen
+    navigationController?.popViewController(animated: true)
+    //navigationController?.pushViewController(vc, animated: true)
   }
+  
 }
