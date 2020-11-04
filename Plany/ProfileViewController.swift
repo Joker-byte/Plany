@@ -17,8 +17,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
  
   override func viewDidLoad() {
     super.viewDidLoad()
+ 
+    profileImage.layer.cornerRadius = profileImage.frame.height/2
     
-    profileImage.layer.cornerRadius = 50
+    
+    
     
     if let existUser = UserDefaults.standard.object(forKey: "ProfileImage") as? Data {
       

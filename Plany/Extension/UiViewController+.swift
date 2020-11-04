@@ -11,17 +11,16 @@ extension UIViewController {
   func customNavigationButton(selector: Selector? = nil, named: String? = nil, tintColor: UIColor? = nil, dataButton: Data? = nil){
     let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
     
-    
     if let namedExist = named {
       
       mioButton.setImage(UIImage(named: namedExist), for: .normal)
       
     }
    if let dataExist = dataButton {
-    
    // mioButton.setImage(UIImage(data: dataExist), for: .normal)
     mioButton.setImage(UIImage(data: dataExist, scale: CGFloat(20)), for: .normal)
-   
+    mioButton.imageView?.layer.cornerRadius = mioButton.frame.size.height/2
+    mioButton.imageView?.clipsToBounds = true
    }
     
     if let ciSta = selector {
