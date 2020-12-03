@@ -1,43 +1,33 @@
-//
 //  UiViewController+.swift
-//  Plany/
-//
+//  Plany
 //  Created by Gianluca Dubioso on 26/10/2020.
-//
+//  Extension UIView Controller
 
 import UIKit
 
 extension UIViewController {
+                
   func customNavigationButton(selector: Selector? = nil, named: String? = nil, tintColor: UIColor? = nil, dataButton: Data? = nil){
-    let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+    let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
     
     if let namedExist = named {
-      
       mioButton.setImage(UIImage(named: namedExist), for: .normal)
-      
     }
    if let dataExist = dataButton {
-   // mioButton.setImage(UIImage(data: dataExist), for: .normal)
     mioButton.setImage(UIImage(data: dataExist, scale: CGFloat(20)), for: .normal)
-    mioButton.imageView?.layer.cornerRadius = mioButton.frame.size.height/2
-    mioButton.imageView?.clipsToBounds = true
+    mioButton.layer.cornerRadius = mioButton.frame.width*0.6
+   // mioButton.clipsToBounds = true
    }
-    
     if let ciSta = selector {
-      
       mioButton.addTarget(self, action: ciSta, for: .touchUpInside)
     }
-    
     if let cistaColor = tintColor {
-      
       mioButton.imageView?.image = mioButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
       mioButton.imageView?.tintColor = cistaColor
-      
     }
-  
+    mioButton.clipsToBounds = true
     mioButton.imageView?.contentMode = .scaleAspectFit
-    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mioButton)
-    
+    navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
   
   func labelNavigation(textColor: UIColor, text: String){
@@ -64,6 +54,4 @@ extension UIViewController {
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
   }
-  
 }
-
