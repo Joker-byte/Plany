@@ -14,11 +14,12 @@
 		9A07CB6D254175BC000C2B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */; };
 		9A07CB78254175BC000C2B50 /* PlanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB77254175BC000C2B50 /* PlanyTests.swift */; };
 		9A07CB83254175BC000C2B50 /* PlanyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB82254175BC000C2B50 /* PlanyUITests.swift */; };
-		9A1654C22551684500B0A4B2 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1654C12551684500B0A4B2 /* CollectionViewCell.swift */; };
+		9A0ABC0A258D535B00211138 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ABC09258D535B00211138 /* Task.swift */; };
 		9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50E36A254744F700910B8D /* UiViewController+.swift */; };
+		9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */; };
 		9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7524922541D03F00BAD0EC /* CalendarViewController.swift */; };
-		9A8142A925537DD300C6F043 /* collViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8142A825537DD300C6F043 /* collViewController.swift */; };
 		9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9040E42547A11F007FAC33 /* ProfileViewController.swift */; };
+		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +53,12 @@
 		9A07CB7E254175BC000C2B50 /* PlanyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07CB82254175BC000C2B50 /* PlanyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanyUITests.swift; sourceTree = "<group>"; };
 		9A07CB84254175BC000C2B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A1654C12551684500B0A4B2 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		9A0ABC09258D535B00211138 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		9A50E36A254744F700910B8D /* UiViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+.swift"; sourceTree = "<group>"; };
+		9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9A7524922541D03F00BAD0EC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		9A8142A825537DD300C6F043 /* collViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collViewController.swift; sourceTree = "<group>"; };
 		9A9040E42547A11F007FAC33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9ABA1100258438E80056B47B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,6 @@
 		9A07CB51254175BA000C2B50 = {
 			isa = PBXGroup;
 			children = (
-				9A8142A825537DD300C6F043 /* collViewController.swift */,
 				9A07CB5C254175BA000C2B50 /* Plany */,
 				9A07CB76254175BC000C2B50 /* PlanyTests */,
 				9A07CB81254175BC000C2B50 /* PlanyUITests */,
@@ -109,14 +110,11 @@
 			isa = PBXGroup;
 			children = (
 				9A07CB5D254175BA000C2B50 /* AppDelegate.swift */,
-				9A07CB61254175BA000C2B50 /* ViewController.swift */,
 				9A50E369254744B700910B8D /* Extension */,
-				9A2757F4255210CC00EC1FCB /* CollectionView */,
-				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
-				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
-				9A07CB63254175BA000C2B50 /* Main.storyboard */,
+				9A887C122588F7F100F8DE36 /* Model */,
+				9AB5117D2584096D00D9E215 /* View */,
+				9AB511752584091500D9E215 /* Controller */,
 				9A07CB69254175BC000C2B50 /* Assets.xcassets */,
-				9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */,
 				9A07CB6E254175BC000C2B50 /* Info.plist */,
 			);
 			path = Plany;
@@ -140,12 +138,12 @@
 			path = PlanyUITests;
 			sourceTree = "<group>";
 		};
-		9A2757F4255210CC00EC1FCB /* CollectionView */ = {
+		9A0ABC0F258D545F00211138 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				9A1654C12551684500B0A4B2 /* CollectionViewCell.swift */,
+				9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */,
 			);
-			path = CollectionView;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9A50E369254744B700910B8D /* Extension */ = {
@@ -154,6 +152,35 @@
 				9A50E36A254744F700910B8D /* UiViewController+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9A887C122588F7F100F8DE36 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A0ABC09258D535B00211138 /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AB511752584091500D9E215 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A0ABC0F258D545F00211138 /* Cell */,
+				9A07CB61254175BA000C2B50 /* ViewController.swift */,
+				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
+				9ABA1100258438E80056B47B /* TasksViewController.swift */,
+				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9AB5117D2584096D00D9E215 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A07CB63254175BA000C2B50 /* Main.storyboard */,
+				9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,8 +315,9 @@
 			files = (
 				9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */,
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
-				9A1654C22551684500B0A4B2 /* CollectionViewCell.swift in Sources */,
-				9A8142A925537DD300C6F043 /* collViewController.swift in Sources */,
+				9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */,
+				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
+				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,
 				9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */,
 				9A07CB5E254175BA000C2B50 /* AppDelegate.swift in Sources */,

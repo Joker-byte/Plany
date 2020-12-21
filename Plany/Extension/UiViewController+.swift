@@ -16,7 +16,6 @@ extension UIViewController {
    if let dataExist = dataButton {
     mioButton.setImage(UIImage(data: dataExist, scale: CGFloat(20)), for: .normal)
     mioButton.layer.cornerRadius = mioButton.frame.width*0.6
-   // mioButton.clipsToBounds = true
    }
     if let ciSta = selector {
       mioButton.addTarget(self, action: ciSta, for: .touchUpInside)
@@ -29,16 +28,14 @@ extension UIViewController {
     mioButton.imageView?.contentMode = .scaleAspectFit
     navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
-  
   func labelNavigation(textColor: UIColor, text: String){
     let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
     label.numberOfLines = 2
     label.text = text
     label.textColor = textColor
-
+    
     navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
   }
-  
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
@@ -53,5 +50,19 @@ extension UIViewController {
     }
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
+  }
+  func alertPresent(textTitle: String, mexText : String, actTitle: String) {
+  
+    let alert = UIAlertController(title: textTitle ,
+                                  message: mexText,
+                                  preferredStyle: .alert)
+    
+         alert.addAction(UIAlertAction(
+                          title: actTitle,
+                          style: .cancel,
+                          handler: nil))
+        present(alert,
+                animated: true,
+                completion: nil)
   }
 }

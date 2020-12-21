@@ -10,26 +10,30 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var surnameField: UITextField!
   @IBOutlet weak var changeImage: UIButton!
+  @IBOutlet var profileTable: UITableView!
   
   let imagePicker = UIImagePickerController()
+  
+  var optionArray : [String] = ["Option1", "Option1", "Option1", "Option1", "Option1"]
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    profileImage.layer.cornerRadius = profileImage.frame.height/2
-    profileImage.contentMode = .scaleAspectFill
-    profileImage.clipsToBounds = true
-    
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
-    // placeholder do not retrieve data from new save picked
-    // example :
-    //    nameField.placeholder = UserDefaults.standard.string(forKey: "UserName")
-    nameField.text = UserDefaults.standard.string(forKey: "UserName")
-    surnameField.text = UserDefaults.standard.string(forKey: "UserSurname")
+   
+    self.profileTable.delegate = self
+    self.profileTable.dataSource = self
+   
+    controlexistence()
+    userDefault()
+    setLayout()
+  }
+}
+extension ProfileViewController {
+  
+ func controlexistence(){
     
-    customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
-
     if let existStringName = UserDefaults.standard.string(forKey: "UserName"){
       nameField.text = existStringName
       
@@ -51,6 +55,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
   }
   
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
+    }
+    profileImage.image = pickedImage
+    let pngIcon = pickedImage.pngData()
+    UserDefaults.standard.set(pngIcon, forKey: "ProfileImage")
+    dismiss(animated: true, completion: nil)
+  }
+  
   @IBAction func didTapAddPhotoButton(_ sender: Any) {
     
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -67,18 +80,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     present(alert, animated: true, completion: nil)
-  }
-}
-
-extension ProfileViewController {
-  
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
-    }
-    profileImage.image = pickedImage
-    let pngIcon = pickedImage.pngData()
-    UserDefaults.standard.set(pngIcon, forKey: "ProfileImage")
-    dismiss(animated: true, completion: nil)
   }
   
   func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
@@ -109,8 +110,8 @@ extension ProfileViewController {
     let resulted = "Hello \n" + resultTextField
     UserDefaults.standard.set(resulted, forKey: "User")
     saveInfo_clicked()
-    
   }
+  
   @objc func saveInfo_clicked() {
     let nome = nameField.text
     let cognome = surnameField.text
@@ -118,4 +119,36 @@ extension ProfileViewController {
     UserDefaults.standard.set(nome, forKey: "UserName")
     UserDefaults.standard.set(cognome, forKey: "UserSurname")
   }
+  
+  func setLayout(){
+      profileImage.contentMode = .scaleAspectFill
+      profileImage.clipsToBounds = true
+      profileImage.layer.cornerRadius = profileImage.frame.height/2
+     customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
+    
+  }
+  
+  func userDefault(){
+      nameField.text = UserDefaults.standard.string(forKey: "UserName")
+      surnameField.text = UserDefaults.standard.string(forKey: "UserSurname")
+  }
+}
+
+extension ProfileViewController : UITableViewDataSource{
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.optionArray.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = profileTable.dequeueReusableCell(withIdentifier: "optionCell", for: indexPath)
+    
+    cell.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+    cell.textLabel?.text = optionArray[indexPath.row]
+    
+    return cell
+  }
+}
+extension ProfileViewController: UITableViewDelegate {
+  
 }
