@@ -10,26 +10,26 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var surnameField: UITextField!
   @IBOutlet weak var changeImage: UIButton!
-  
+
   let imagePicker = UIImagePickerController()
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    profileImage.layer.cornerRadius = profileImage.frame.height/2
-    profileImage.contentMode = .scaleAspectFill
-    profileImage.clipsToBounds = true
-    
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
-    // placeholder do not retrieve data from new save picked
-    // example :
-    //    nameField.placeholder = UserDefaults.standard.string(forKey: "UserName")
-    nameField.text = UserDefaults.standard.string(forKey: "UserName")
-    surnameField.text = UserDefaults.standard.string(forKey: "UserSurname")
+   
+    controlexistence()
+    userDefault()
+    setLayout()
+  }
     
-    customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
+}
 
+extension ProfileViewController {
+  
+ func controlexistence(){
+    
     if let existStringName = UserDefaults.standard.string(forKey: "UserName"){
       nameField.text = existStringName
       
@@ -51,6 +51,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
   }
   
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
+    }
+    profileImage.image = pickedImage
+    let pngIcon = pickedImage.pngData()
+    UserDefaults.standard.set(pngIcon, forKey: "ProfileImage")
+    dismiss(animated: true, completion: nil)
+  }
+  
   @IBAction func didTapAddPhotoButton(_ sender: Any) {
     
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -67,18 +76,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     
     alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
     present(alert, animated: true, completion: nil)
-  }
-}
-
-extension ProfileViewController {
-  
-  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
-    }
-    profileImage.image = pickedImage
-    let pngIcon = pickedImage.pngData()
-    UserDefaults.standard.set(pngIcon, forKey: "ProfileImage")
-    dismiss(animated: true, completion: nil)
   }
   
   func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
@@ -109,8 +106,8 @@ extension ProfileViewController {
     let resulted = "Hello \n" + resultTextField
     UserDefaults.standard.set(resulted, forKey: "User")
     saveInfo_clicked()
-    
   }
+  
   @objc func saveInfo_clicked() {
     let nome = nameField.text
     let cognome = surnameField.text
@@ -118,4 +115,19 @@ extension ProfileViewController {
     UserDefaults.standard.set(nome, forKey: "UserName")
     UserDefaults.standard.set(cognome, forKey: "UserSurname")
   }
+  
+  func setLayout(){
+    
+      profileImage.contentMode = .scaleAspectFill
+      profileImage.clipsToBounds = true
+      profileImage.layer.cornerRadius = profileImage.frame.height/2
+     customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
+    
+  }
+  
+  func userDefault(){
+      nameField.text = UserDefaults.standard.string(forKey: "UserName")
+      surnameField.text = UserDefaults.standard.string(forKey: "UserSurname")
+  }
+  
 }

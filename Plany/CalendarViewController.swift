@@ -11,27 +11,13 @@ class CalendarViewController: UIViewController {
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var datePicker: UIDatePicker!
   
-  @IBAction func datePickerChanged(_ sender: Any) {
-    let dateFormatter = DateFormatter()
-   
-    dateFormatter.dateStyle = DateFormatter.Style.medium
-    dateFormatter.timeStyle = DateFormatter.Style.short
-           
-    let stringDate = dateFormatter.string(from: datePicker.date)
-      
-    dateLabel.text = stringDate
-    UserDefaults.standard.set(stringDate, forKey: "DateText")
-      }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveTitleTag))
-    
-     datePicker.setValue(UIColor.white, forKeyPath: "textColor")
-     titleTextView.layer.cornerRadius = 4
-     dateLabel.text = "Select Date"
+    setView()
  }
+}
+
+extension CalendarViewController {
   
   @objc func saveTitleTag() {
     let titleTx = titleTextView.text
@@ -45,5 +31,25 @@ class CalendarViewController: UIViewController {
     }
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.popViewController(animated: true)
+  }
+  
+  @IBAction func datePickerChanged(_ sender: Any) {
+    let dateFormatter = DateFormatter()
+   
+    dateFormatter.dateStyle = DateFormatter.Style.medium
+    dateFormatter.timeStyle = DateFormatter.Style.short
+           
+    let stringDate = dateFormatter.string(from: datePicker.date)
+      
+    dateLabel.text = stringDate
+    UserDefaults.standard.set(stringDate, forKey: "DateText")
+      }
+  @objc func setView(){
+    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(saveTitleTag))
+    
+     datePicker.setValue(UIColor.white, forKeyPath: "textColor")
+     titleTextView.layer.cornerRadius = 4
+     dateLabel.text = "Select Date"
   }
 }
