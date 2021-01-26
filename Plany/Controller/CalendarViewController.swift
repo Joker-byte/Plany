@@ -19,7 +19,7 @@ class CalendarViewController: UIViewController {
 }
 
 extension CalendarViewController {
-  
+  //MARK: Add Item UserDefaults
   @objc func saveTitleTag() {
     
     if titleTextView.text == "" || tagTextField.text == "" {
@@ -35,10 +35,10 @@ extension CalendarViewController {
     UserDefaults.standard.set(titleTx, forKey: "TitleText")
     UserDefaults.standard.set(tagTx, forKey: "TagText")
           
-        NotificationCenter.default.post(
-          name: NSNotification.Name(
-            rawValue: "updateArray"),
-              object: nil)
+  NotificationCenter.default.post(
+        name: NSNotification.Name(
+          rawValue: "updateArray"),
+            object: nil)
          }
     
 guard let vc = UIStoryboard(

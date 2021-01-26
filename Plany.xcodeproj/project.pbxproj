@@ -20,6 +20,7 @@
 		9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7524922541D03F00BAD0EC /* CalendarViewController.swift */; };
 		9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9040E42547A11F007FAC33 /* ProfileViewController.swift */; };
 		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
+		9AF4278C25B743A900099802 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4278B25B743A900099802 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		9A7524922541D03F00BAD0EC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9A9040E42547A11F007FAC33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9ABA1100258438E80056B47B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		9AF4278B25B743A900099802 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				9A07CB61254175BA000C2B50 /* ViewController.swift */,
 				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
 				9ABA1100258438E80056B47B /* TasksViewController.swift */,
+				9AF4278B25B743A900099802 /* TableViewController.swift */,
 				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
 			);
 			path = Controller;
@@ -316,6 +319,7 @@
 				9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */,
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
 				9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */,
+				9AF4278C25B743A900099802 /* TableViewController.swift in Sources */,
 				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
 				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,

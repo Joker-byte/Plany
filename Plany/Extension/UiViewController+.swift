@@ -6,7 +6,7 @@
 import UIKit
 
 extension UIViewController {
-                
+                //MARK: Custom Nav Button
   func customNavigationButton(selector: Selector? = nil, named: String? = nil, tintColor: UIColor? = nil, dataButton: Data? = nil){
     let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
     
@@ -28,6 +28,8 @@ extension UIViewController {
     mioButton.imageView?.contentMode = .scaleAspectFit
     navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
+  
+  //MARK: Label Navigation
   func labelNavigation(textColor: UIColor, text: String){
     let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
     label.numberOfLines = 2
@@ -36,6 +38,7 @@ extension UIViewController {
     
     navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
   }
+  //MARK: Function 
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
@@ -51,6 +54,8 @@ extension UIViewController {
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
   }
+  
+  // MARK: Alert
   func alertPresent(textTitle: String, mexText : String, actTitle: String) {
   
     let alert = UIAlertController(title: textTitle ,
@@ -65,4 +70,17 @@ extension UIViewController {
                 animated: true,
                 completion: nil)
   }
+  
+  //MARK: UserDefaults handler
+  
+  @objc func Defaultset(data: String? = nil, key: String) {
+    UserDefaults.standard.set(data, forKey: key)
+  }
+  @objc func DefaultObj(key: String){
+    UserDefaults.standard.object(forKey: key)
+  }
+  @objc func DefaultString(key: String){
+    UserDefaults.standard.string(forKey: key)
+  }
 }
+

@@ -15,14 +15,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   let imagePicker = UIImagePickerController()
   
   var optionArray : [String] = ["Option1", "Option1", "Option1", "Option1", "Option1"]
-
+//MARK: ViewDidLoad
   override func viewDidLoad() {
     super.viewDidLoad()
     
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
    
-    self.profileTable.delegate = self
+    //self.profileTable.delegate = self
     self.profileTable.dataSource = self
    
     controlexistence()
@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   }
 }
 extension ProfileViewController {
-  
+  //MARK: Control Existence
  func controlexistence(){
     
     if let existStringName = UserDefaults.standard.string(forKey: "UserName"){
@@ -54,7 +54,7 @@ extension ProfileViewController {
       profileImage.image = UIImage(named: "PersonIcon")
     }
   }
-  
+  //MARK: Picker Controller
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
     }
@@ -65,7 +65,7 @@ extension ProfileViewController {
   }
   
   @IBAction func didTapAddPhotoButton(_ sender: Any) {
-    
+    //MARK: Alert
     let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
     
     alert.addAction(UIAlertAction(title: "Photo Gallery", style: .default, handler: { (button) in
@@ -82,6 +82,7 @@ extension ProfileViewController {
     present(alert, animated: true, completion: nil)
   }
   
+  //MARK: Button Save
   func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
     let saveButton = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
     saveButton.setImage(UIImage(named: named), for: .normal)
@@ -98,6 +99,7 @@ extension ProfileViewController {
     navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: saveButton)]
   }
   
+  //MARK: Save Items
   @objc func saveNameSurname () {
     guard let name = nameField.text,
           let surname = surnameField.text else {
@@ -119,7 +121,7 @@ extension ProfileViewController {
     UserDefaults.standard.set(nome, forKey: "UserName")
     UserDefaults.standard.set(cognome, forKey: "UserSurname")
   }
-  
+  //MARK: Layout
   func setLayout(){
       profileImage.contentMode = .scaleAspectFill
       profileImage.clipsToBounds = true
@@ -134,6 +136,10 @@ extension ProfileViewController {
   }
 }
 
+//extension ProfileViewController: UITableViewDelegate {
+//
+//}
+//MARK: Table View DataSource
 extension ProfileViewController : UITableViewDataSource{
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -149,6 +155,4 @@ extension ProfileViewController : UITableViewDataSource{
     return cell
   }
 }
-extension ProfileViewController: UITableViewDelegate {
-  
-}
+

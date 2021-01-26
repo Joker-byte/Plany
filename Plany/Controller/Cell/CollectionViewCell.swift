@@ -13,6 +13,7 @@ class CollectionViewCell: UICollectionViewCell {
       @IBOutlet weak var postText: UILabel!
       @IBOutlet weak var postTime: UILabel!
       @IBOutlet weak var postTimeHours: UILabel!
+ 
   override func awakeFromNib() {
       super.awakeFromNib()
   }
