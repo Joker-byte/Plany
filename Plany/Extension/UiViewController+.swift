@@ -36,7 +36,10 @@ extension UIViewController {
 
     navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> parent of d331b50... Aggiornamento
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
@@ -54,6 +57,7 @@ extension UIViewController {
   }
   func alertPresent(textTitle: String, mexText : String, actTitle: String) {
   
+<<<<<<< HEAD
     let alert = UIAlertController(title: textTitle , message: mexText, preferredStyle: .alert)
   
     alert.addAction(UIAlertAction(title: actTitle, style: .cancel, handler: nil))
@@ -170,3 +174,18 @@ extension UIViewController {
 //      return [action, actionShare]// return delle action definite in precedenza
 //  }
 //}
+=======
+    let alert = UIAlertController(title: textTitle ,
+                                  message: mexText,
+                                  preferredStyle: .alert)
+    
+         alert.addAction(UIAlertAction(
+                          title: actTitle,
+                          style: .cancel,
+                          handler: nil))
+        present(alert,
+                animated: true,
+                completion: nil)
+  }
+}
+>>>>>>> parent of d331b50... Aggiornamento

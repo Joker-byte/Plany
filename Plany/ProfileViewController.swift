@@ -12,6 +12,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   @IBOutlet weak var changeImage: UIButton!
 
   let imagePicker = UIImagePickerController()
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+  
+  var optionArray : [String] = ["Option1", "Option1", "Option1", "Option1", "Option1"]
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,6 +24,12 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
    
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+    self.profileTable.delegate = self
+    self.profileTable.dataSource = self
+   
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
     controlexistence()
     userDefault()
     setLayout()
@@ -129,5 +140,21 @@ extension ProfileViewController {
       nameField.text = UserDefaults.standard.string(forKey: "UserName")
       surnameField.text = UserDefaults.standard.string(forKey: "UserSurname")
   }
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+}
+
+extension ProfileViewController : UITableViewDataSource{
+
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.optionArray.count
+  }
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
   
 }
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+extension ProfileViewController: UITableViewDelegate {
+  
+}
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
