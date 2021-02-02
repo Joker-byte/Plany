@@ -9,6 +9,7 @@ class CalendarViewController: UIViewController {
   @IBOutlet weak var titleTextView: UITextField!
   @IBOutlet var tagTextField: UITextField!
   @IBOutlet weak var dateLabel: UILabel!
+  
   @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var timeLabel: UILabel!
  
@@ -19,7 +20,7 @@ class CalendarViewController: UIViewController {
 }
 
 extension CalendarViewController {
-  
+  //MARK: Add Item UserDefaults
   @objc func saveTitleTag() {
     
     if titleTextView.text == "" || tagTextField.text == "" {
@@ -35,10 +36,10 @@ extension CalendarViewController {
     UserDefaults.standard.set(titleTx, forKey: "TitleText")
     UserDefaults.standard.set(tagTx, forKey: "TagText")
           
-        NotificationCenter.default.post(
-          name: NSNotification.Name(
-            rawValue: "updateArray"),
-              object: nil)
+  NotificationCenter.default.post(
+        name: NSNotification.Name(
+          rawValue: "updateArray"),
+            object: nil)
          }
     
 guard let vc = UIStoryboard(
@@ -70,7 +71,7 @@ guard let vc = UIStoryboard(
     UserDefaults.standard.set(stringDate, forKey: "DateText")
     UserDefaults.standard.set(secondDate, forKey: "DateTime")
     
-      }
+  }
   
   @objc func setView(){
     

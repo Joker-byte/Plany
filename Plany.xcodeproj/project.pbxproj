@@ -19,6 +19,7 @@
 		9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */; };
 		9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7524922541D03F00BAD0EC /* CalendarViewController.swift */; };
 		9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9040E42547A11F007FAC33 /* ProfileViewController.swift */; };
+		9AB6FE9E25C7287800DAFC4D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */; };
 		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9A7524922541D03F00BAD0EC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9A9040E42547A11F007FAC33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		9ABA1100258438E80056B47B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				9A07CB63254175BA000C2B50 /* Main.storyboard */,
+				9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */,
 				9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -316,6 +319,7 @@
 				9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */,
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
 				9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */,
+				9AB6FE9E25C7287800DAFC4D /* PickerViewController.swift in Sources */,
 				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
 				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,
