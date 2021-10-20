@@ -65,10 +65,14 @@ extension ProfileViewController {
     }
   }
   //MARK: Picker Controller
+<<<<<<< HEAD
   func imagePickerController(_ picker: UIImagePickerController,
             didFinishPickingMediaWithInfo info: [
             UIImagePickerController.InfoKey : Any]) {
    
+=======
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+>>>>>>> d331b5083851a9c29f836111d72423928898faea
     guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
     }
     profileImage.image = pickedImage
@@ -83,6 +87,7 @@ extension ProfileViewController {
   
   @IBAction func didTapAddPhotoButton(_ sender: Any) {
     //MARK: Alert
+<<<<<<< HEAD
    
     let alert = UIAlertController(
       title: nil, message: nil,
@@ -92,6 +97,9 @@ extension ProfileViewController {
                       title: "Photo Gallery",
                       style: .default,
                       handler: { (button) in
+=======
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+>>>>>>> d331b5083851a9c29f836111d72423928898faea
     
       self.imagePicker.sourceType = .photoLibrary
     
@@ -126,6 +134,7 @@ extension ProfileViewController {
   }
   
   //MARK: Button Save
+<<<<<<< HEAD
   func customNavigationButtonSave(
     selector: Selector? = nil,
     named: String,
@@ -141,6 +150,11 @@ extension ProfileViewController {
     saveButton.setImage(UIImage(
                           named: named),
                           for: .normal)
+=======
+  func customNavigationButtonSave(selector: Selector? = nil, named: String, tintColor: UIColor? = nil){
+    let saveButton = UIButton(frame: CGRect(x: 0, y: 0, width: 28, height: 28))
+    saveButton.setImage(UIImage(named: named), for: .normal)
+>>>>>>> d331b5083851a9c29f836111d72423928898faea
     
     if let ciSta = selector {
      

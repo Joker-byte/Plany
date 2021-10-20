@@ -55,6 +55,7 @@ extension UIViewController {
     navigationController?.pushViewController(vc, animated: true)
   }
   
+<<<<<<< HEAD
   
   @objc func addTapped3 () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Picker") as? PickerViewController  else {
@@ -64,6 +65,8 @@ extension UIViewController {
     navigationController?.present(vc, animated: true)
   }
   
+=======
+>>>>>>> d331b5083851a9c29f836111d72423928898faea
   // MARK: Alert
   func alertPresent(textTitle: String, mexText : String, actTitle: String) {
   
@@ -80,6 +83,7 @@ extension UIViewController {
                 completion: nil)
   }
   
+<<<<<<< HEAD
   
   //MARK: finire change datepicker
 //
@@ -107,5 +111,18 @@ extension UIViewController {
 //  }
 
 
+=======
+  //MARK: UserDefaults handler
+  
+  @objc func Defaultset(data: String? = nil, key: String) {
+    UserDefaults.standard.set(data, forKey: key)
+  }
+  @objc func DefaultObj(key: String){
+    UserDefaults.standard.object(forKey: key)
+  }
+  @objc func DefaultString(key: String){
+    UserDefaults.standard.string(forKey: key)
+  }
+>>>>>>> d331b5083851a9c29f836111d72423928898faea
 }
 
