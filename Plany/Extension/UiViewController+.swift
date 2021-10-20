@@ -60,10 +60,7 @@ extension UIViewController {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Picker") as? PickerViewController  else {
       return
     }
-    //vc.modalPresentationStyle = .
-//vc.modalPresentationStyle = .overFullScreen
     vc.modalTransitionStyle = .crossDissolve
-   // navigationController?.pushViewController(vc, animated: true)
     navigationController?.present(vc, animated: true)
   }
   
@@ -99,14 +96,16 @@ extension UIViewController {
   
   //MARK: UserDefaults handler
   
-  @objc func Defaultset(data: String? = nil, key: String) {
-    UserDefaults.standard.set(data, forKey: key)
-  }
-  @objc func DefaultObj(key: String){
-    UserDefaults.standard.object(forKey: key)
-  }
-  @objc func DefaultString(key: String){
-    UserDefaults.standard.string(forKey: key)
-  }
+//  @objc func Defaultset(data: String? = nil, key: String) {
+//    UserDefaults.standard.set(data, forKey: key)
+//  }
+//  @objc func DefaultObj(key: String){
+//    UserDefaults.standard.object(forKey: key)
+//  }
+//  @objc func DefaultString(key: String){
+//    UserDefaults.standard.string(forKey: key)
+//  }
+
+
 }
 

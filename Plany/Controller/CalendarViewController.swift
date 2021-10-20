@@ -42,6 +42,7 @@ extension CalendarViewController {
             object: nil)
          }
     
+    
 guard let vc = UIStoryboard(
         name: "Main",
         bundle: nil).instantiateViewController(
@@ -49,7 +50,9 @@ guard let vc = UIStoryboard(
       return
     }
     vc.modalPresentationStyle = .overFullScreen
-    navigationController?.popViewController(animated: true)
+
+    navigationController?.popViewController(
+                               animated: true)
   }
   
   @IBAction func datePickerChanged(_ sender: Any) {
@@ -62,14 +65,19 @@ guard let vc = UIStoryboard(
     dateFormatter.dateFormat = "yyyy-MM-dd"
     timeFormatter.dateFormat = "HH:mm"
     
-    let stringDate = dateFormatter.string(from: datePicker.date)
-    let secondDate = timeFormatter.string(from: datePicker.date)
+    let stringDate = dateFormatter.string(
+                       from: datePicker.date)
+    let secondDate = timeFormatter.string(
+                       from: datePicker.date)
       
     dateLabel.text = stringDate
     timeLabel.text = secondDate
     
-    UserDefaults.standard.set(stringDate, forKey: "DateText")
-    UserDefaults.standard.set(secondDate, forKey: "DateTime")
+    UserDefaults.standard.set(
+      stringDate, forKey: "DateText")
+    
+    UserDefaults.standard.set(
+      secondDate, forKey: "DateTime")
     
   }
   

@@ -19,6 +19,7 @@ class PickerViewController: UIViewController {
            super.viewDidLoad()
     
     popUp.layer.cornerRadius = 9
+    
     }
   
   
@@ -28,7 +29,7 @@ class PickerViewController: UIViewController {
     
     dateFormatter.dateStyle = DateFormatter.Style.short
     dateFormatter.timeStyle = DateFormatter.Style.short
-     
+    
     dateFormatter.dateFormat = "yyyy-MM-dd"
     timeFormatter.dateFormat = "HH:mm"
     
@@ -45,18 +46,17 @@ class PickerViewController: UIViewController {
 //          name: NSNotification.Name(
 //            rawValue: "updateArray"),
 //              object: nil)
+    
 //    
   }
   
   @IBAction func returnOK(_ sender: Any) {
   dismiss(animated: true, completion: nil)
+    
   }
-  
   
   @IBAction func returnnil(_ sender: Any) {
     dismiss(animated: true, completion: nil)
     
   }
-  
-  
 }

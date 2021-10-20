@@ -171,6 +171,7 @@
 				9A07CB61254175BA000C2B50 /* ViewController.swift */,
 				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
 				9ABA1100258438E80056B47B /* TasksViewController.swift */,
+				9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */,
 				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
 			);
 			path = Controller;
@@ -180,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				9A07CB63254175BA000C2B50 /* Main.storyboard */,
-				9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */,
 				9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */,
 			);
 			path = View;

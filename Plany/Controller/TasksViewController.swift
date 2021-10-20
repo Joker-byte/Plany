@@ -33,16 +33,26 @@ class TasksViewController: UIViewController {
   @IBAction func addButton_clicked(_ sender: UIButton) {
     
     if inputTextField.text == "" {
-      alertPresent(textTitle: "Hey Dude", mexText: "Text Field can't be Empty", actTitle: "Cancel")
+      
+      alertPresent(textTitle: "Hey Dude",
+                   mexText: "Text Field can't be Empty",
+                   actTitle: "Cancel")
+    
     } else {
+    
       guard let text = self.inputTextField.text else {
-      return
+   
+        return
   }
-      if omniItem.isEmpty {
+    if omniItem.isEmpty {
         omniItem.append(Section(name: "To Do", tasks: [
-                                  Task(taskName: text, shared: false, isDone: false)]))
+                            Task(taskName: text,
+                                 shared: false, isDone: false)]))
       } else {
-        omniItem[0].tasks.append(Task(taskName: text, shared: false, isDone: false))
+        
+        omniItem[0].tasks.append(
+              Task(taskName: text,
+                shared: false, isDone: false))
         
       }
       save()
@@ -53,27 +63,44 @@ class TasksViewController: UIViewController {
   
   // Edit Button
   @objc func editButton_clicked() {
-    self.tableView.setEditing(!self.tableView.isEditing, animated: true)
+    
+    self.tableView.setEditing(
+      !self.tableView.isEditing,
+      animated: true)
   }
   
   @objc func mio(){
-    let editButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 32))
+    let editButton = UIButton(
+      frame: CGRect(x: 0, y: 0,
+                    width: 50, height: 32))
     
-    editButton.setTitle("Edit", for: .normal)
-    editButton.setTitleColor(.white, for: .normal)
-    editButton.addTarget(self, action: #selector(editButton_clicked), for: .touchUpInside)
+    editButton.setTitle(
+      "Edit", for: .normal)
+   
+    editButton.setTitleColor(
+      .white, for: .normal)
+    
+    editButton.addTarget(
+      self, action: #selector(
+        editButton_clicked),
+          for: .touchUpInside)
     
     inputTextField.layer.cornerRadius = inputTextField.frame.height/2
     inputTextField.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
     inputTextField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     
-    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editButton)
+    navigationItem.rightBarButtonItem = UIBarButtonItem(
+                                   customView: editButton)
   }
   
   func load() {
-    if let loadData = UserDefaults.standard.value(forKey: "abitudine") as? Data {
+    if let loadData = UserDefaults.standard.value(
+                      forKey: "abitudine") as? Data {
+      
       let decoder = JSONDecoder()
-      let myArray = try? decoder.decode([Section].self, from: loadData)
+      let myArray = try? decoder.decode(
+          [Section].self, from: loadData)
+      
       omniItem = myArray!
       tableView.reloadData()
     }
@@ -81,19 +108,27 @@ class TasksViewController: UIViewController {
   
   func save() {
     let encoder = JSONEncoder()
+   
     let myArray = try? encoder.encode(omniItem)
-    UserDefaults.standard.set(myArray, forKey: "abitudine")
+   
+    UserDefaults.standard.set(
+      myArray, forKey: "abitudine")
   }
   
   func save2() {
+   
     let encoder = JSONEncoder()
     let myArray = try? encoder.encode(sharedArrayTask)
-    UserDefaults.standard.set(myArray, forKey: "shared")
+   
+    UserDefaults.standard.set(
+      myArray, forKey: "shared")
   }
 }
 //MARK: TableView DataSource
 extension TasksViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+  func tableView(_ tableView: UITableView,
+                 heightForHeaderInSection section: Int) -> CGFloat {
+    
     if omniItem[section].tasks.isEmpty {
       return 0
     } else {
@@ -101,9 +136,11 @@ extension TasksViewController: UITableViewDataSource {
     }
   }
   
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+  func tableView(_ tableView: UITableView,
+                 didSelectRowAt indexPath: IndexPath)
   {
-    tableView.deselectRow(at: indexPath, animated: true)
+    tableView.deselectRow(at: indexPath,
+                          animated: true)
     
     let text = omniItem[indexPath.section].tasks[indexPath.row]
    
@@ -119,6 +156,7 @@ extension TasksViewController: UITableViewDataSource {
       omniItem[1].tasks.append(text)
       omniItem[0].tasks.remove(at: indexPath.row)
       save()
+      
       self.tableView.reloadData()
     }
    
@@ -139,6 +177,7 @@ extension TasksViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    
     let label = UILabel()
     label.text = omniItem[section].name
     label.textColor = .white
@@ -152,7 +191,8 @@ extension TasksViewController: UITableViewDataSource {
       return omniItem.count
   }
   
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView,
+                 numberOfRowsInSection section: Int) -> Int {
     
     return omniItem[section].tasks.count
     
@@ -160,9 +200,11 @@ extension TasksViewController: UITableViewDataSource {
   //MARK: Reusable Cell
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-    let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(
+        withIdentifier: "taskCell", for: indexPath)
+    
     cell.tintColor = UIColor.black
-    cell.textLabel?.text =      omniItem[indexPath.section].tasks[indexPath.row].taskName
+    cell.textLabel?.text = omniItem[indexPath.section].tasks[indexPath.row].taskName
     
          if omniItem[indexPath.section].name != "To Do" {
           cell.accessoryType = .checkmark
@@ -175,21 +217,32 @@ extension TasksViewController: UITableViewDataSource {
 //MARK: TableView Delegate
 extension TasksViewController: UITableViewDelegate {
   
-  func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+  func tableView(_ tableView: UITableView,
+                 editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
     return .none
+    
   }
   
-  func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+  func tableView(_ tableView: UITableView,
+                 shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+  
     return false
+    
   }
   
-  func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    self.omniItem.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+  func tableView(_ tableView: UITableView,
+                 moveRowAt sourceIndexPath: IndexPath,
+                 to destinationIndexPath: IndexPath) {
+    
+    self.omniItem.swapAt(
+      sourceIndexPath.row,
+      destinationIndexPath.row)
     
   }
   
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     //MARK: DELETE ACTION
+  
     let action = UITableViewRowAction.init(
       style: .normal,
       title: "Delete")

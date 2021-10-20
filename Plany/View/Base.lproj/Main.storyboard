@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gME-xn-k9Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gME-xn-k9Y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,17 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YG-it-bBy" userLabel="homework Label">
-                                <rect key="frame" x="20" y="185" width="83" height="20"/>
+                                <rect key="frame" x="20" y="180" width="83" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="mHJ-l9-jis" userLabel="search Bar">
-                                <rect key="frame" x="10" y="114" width="335" height="56"/>
+                                <rect key="frame" x="10" y="114" width="335" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxs-7A-C1b" userLabel="tasks Label">
-                                <rect key="frame" x="20" y="420" width="43" height="20.5"/>
+                                <rect key="frame" x="20" y="415" width="43" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20.5" id="ZFF-Ea-rTv"/>
                                 </constraints>
@@ -38,21 +38,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wo7-Rn-cdQ" userLabel="calendar">
-                                <rect key="frame" x="355" y="126" width="32" height="34.5"/>
+                                <rect key="frame" x="355" y="126" width="32" height="29.5"/>
                                 <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="L4H-kx-mXu"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaQ-fQ-Bkc" userLabel="add Homework Button">
-                                <rect key="frame" x="357" y="184.5" width="24" height="24"/>
+                                <rect key="frame" x="357" y="179.5" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="9P6-fe-QBa"/>
                                     <constraint firstAttribute="width" constant="24" id="ol1-nU-xRS"/>
                                 </constraints>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="homeCollection" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2sS-9z-Zid">
-                                <rect key="frame" x="20" y="220" width="367" height="185"/>
+                                <rect key="frame" x="20" y="215" width="367" height="185"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="185" id="xLO-kV-gyr"/>
@@ -123,19 +123,19 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOa-XR-njg">
-                                <rect key="frame" x="357" y="418" width="24" height="24.5"/>
+                                <rect key="frame" x="357" y="413" width="24" height="24.5"/>
                                 <state key="normal" image="Add"/>
                                 <connections>
                                     <segue destination="g3W-3L-3cP" kind="show" id="UiO-BX-gXo"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5vS-oi-QPo">
-                                <rect key="frame" x="19" y="460" width="377" height="436"/>
+                                <rect key="frame" x="19" y="455" width="377" height="441"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.12941176469999999" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tasksSharedCell" textLabel="hBF-BC-xit" style="IBUITableViewCellStyleDefault" id="yKC-xU-7JG">
-                                        <rect key="frame" x="0.0" y="28" width="377" height="44"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="377" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yKC-xU-7JG" id="0T6-Vi-A3s">
                                             <rect key="frame" x="0.0" y="0.0" width="377" height="44"/>
@@ -351,7 +351,7 @@
                                 <color key="tintColor" red="0.12941176469999999" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell" textLabel="Mx5-Vv-L7O" style="IBUITableViewCellStyleDefault" id="PX2-c9-hvm">
-                                        <rect key="frame" x="0.0" y="28" width="394" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PX2-c9-hvm" id="7zj-y0-Ueb">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -368,7 +368,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell2" textLabel="J4Q-44-5Nc" style="IBUITableViewCellStyleDefault" id="6zE-pV-vkS">
-                                        <rect key="frame" x="0.0" y="71.5" width="394" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="68" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6zE-pV-vkS" id="GEU-WI-luz">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -385,7 +385,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell3" textLabel="RIN-dl-XKV" style="IBUITableViewCellStyleDefault" id="nq5-Fv-7b9">
-                                        <rect key="frame" x="0.0" y="115" width="394" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="111.5" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nq5-Fv-7b9" id="32f-7P-9mL">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -402,7 +402,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="optionCell4" textLabel="MpO-eQ-r6J" style="IBUITableViewCellStyleDefault" id="qIc-D4-tU8">
-                                        <rect key="frame" x="0.0" y="158.5" width="394" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="155" width="394" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qIc-D4-tU8" id="sSK-hv-vvE">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
@@ -513,7 +513,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taskCell" textLabel="Asc-zv-eCW" style="IBUITableViewCellStyleDefault" id="j9V-eA-Dv9">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j9V-eA-Dv9" id="pW9-AH-L6c">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>

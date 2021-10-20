@@ -7,6 +7,7 @@
 //
 import Foundation
 import UIKit
+
 struct Section: Codable {
   var name: String
   var tasks: [Task]
@@ -31,10 +32,6 @@ struct Task: Codable {
    case isDone
     
   }
-  
-  
-  
-//
 //  init(from decoder: Decoder) throws {
 //          let container = try decoder.container(keyedBy: CodingKeys.self)
 //          taskName = try container.decode(String.self, forKey: .taskName)
@@ -42,10 +39,6 @@ struct Task: Codable {
 //         isDone = try container.decode(Bool.self, forKey: .isDone)
 //  }
 }
-
-
-
-
 
 //import Foundation
 //
@@ -58,9 +51,7 @@ struct Task: Codable {
 //  var tasks: [Task]
 //
 //}
-//
-//
-////tasl
+//tasl
 //
 //struct Task {// info Task
 //
@@ -69,9 +60,6 @@ struct Task: Codable {
 //  var isDone: Bool
 //
 //}
-
-
-
 
 //
 //import Foundation
@@ -85,8 +73,6 @@ struct Task: Codable {
 //  var tasks: [Task]
 //
 //}
-//
-//
 ////tasl
 //
 //struct Task {// info Task
