@@ -9,10 +9,7 @@ class CalendarViewController: UIViewController {
   @IBOutlet weak var titleTextView: UITextField!
   @IBOutlet var tagTextField: UITextField!
   @IBOutlet weak var dateLabel: UILabel!
-<<<<<<< HEAD
   
-=======
->>>>>>> try
   @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var timeLabel: UILabel!
  
@@ -23,15 +20,7 @@ class CalendarViewController: UIViewController {
 }
 
 extension CalendarViewController {
-<<<<<<< HEAD
-<<<<<<< HEAD
   //MARK: Add Item UserDefaults
-=======
-  
->>>>>>> try
-=======
-  //MARK: Add Item UserDefaults
->>>>>>> feature/refactor
   @objc func saveTitleTag() {
     
     if titleTextView.text == "" || tagTextField.text == "" {
@@ -47,24 +36,12 @@ extension CalendarViewController {
     UserDefaults.standard.set(titleTx, forKey: "TitleText")
     UserDefaults.standard.set(tagTx, forKey: "TagText")
           
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> feature/refactor
   NotificationCenter.default.post(
         name: NSNotification.Name(
           rawValue: "updateArray"),
             object: nil)
-<<<<<<< HEAD
-=======
-        NotificationCenter.default.post(
-          name: NSNotification.Name(
-            rawValue: "updateArray"),
-              object: nil)
->>>>>>> try
-=======
->>>>>>> feature/refactor
          }
+    
     
 guard let vc = UIStoryboard(
         name: "Main",
@@ -73,7 +50,9 @@ guard let vc = UIStoryboard(
       return
     }
     vc.modalPresentationStyle = .overFullScreen
-    navigationController?.popViewController(animated: true)
+
+    navigationController?.popViewController(
+                               animated: true)
   }
   
   @IBAction func datePickerChanged(_ sender: Any) {
@@ -86,20 +65,21 @@ guard let vc = UIStoryboard(
     dateFormatter.dateFormat = "yyyy-MM-dd"
     timeFormatter.dateFormat = "HH:mm"
     
-    let stringDate = dateFormatter.string(from: datePicker.date)
-    let secondDate = timeFormatter.string(from: datePicker.date)
+    let stringDate = dateFormatter.string(
+                       from: datePicker.date)
+    let secondDate = timeFormatter.string(
+                       from: datePicker.date)
       
     dateLabel.text = stringDate
     timeLabel.text = secondDate
     
-    UserDefaults.standard.set(stringDate, forKey: "DateText")
-    UserDefaults.standard.set(secondDate, forKey: "DateTime")
+    UserDefaults.standard.set(
+      stringDate, forKey: "DateText")
     
-<<<<<<< HEAD
+    UserDefaults.standard.set(
+      secondDate, forKey: "DateTime")
+    
   }
-=======
-      }
->>>>>>> try
   
   @objc func setView(){
     
