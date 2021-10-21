@@ -3,7 +3,11 @@
 //  Created by Gianluca Dubioso on 22/10/2020.
 
 import UIKit
+<<<<<<< HEAD
 import AudioToolbox
+=======
+
+>>>>>>> try
 class ViewController: UIViewController {
  
   @IBOutlet weak var searchBar: UISearchBar!
@@ -13,6 +17,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var calendar: UIImageView!
   @IBOutlet weak var homeworkCollection: UICollectionView!
   @IBOutlet var sharedTable: UITableView!
+<<<<<<< HEAD
   var longPressedEnabled: Bool!
   var datePicker: UIDatePicker! 
  
@@ -34,6 +39,18 @@ class ViewController: UIViewController {
   var isDone: [Bool] = UserDefaults.standard.object(forKey: "isDone") as? [Bool] ?? [false, false, false, false, false,false, false, false, false, false,false, false, false, false, false]
   
   //MARK: ViewDidLoad
+=======
+  
+  var arrayDate: [String] = UserDefaults.standard.object(forKey: "DateText") as? [String] ?? ["Date"]
+  var arrayTime: [String] = UserDefaults.standard.object(forKey: "DateTime") as? [String] ?? ["Time"]
+  var arrayTitle: [String] = UserDefaults.standard.object(forKey: "TitleText") as? [String] ?? ["Title"]
+  var arrayText: [String] = UserDefaults.standard.object(forKey: "TagText") as? [String] ?? ["Text"]
+ 
+  var isDone: [Bool] = UserDefaults.standard.object(forKey: "isDone") as? [Bool] ?? [false, false, false, false, false,false, false, false, false, false,false, false, false, false, false]
+  
+  var sharedArray: [Section] = []
+//  var newSharedArrayView: [String] = UserDefaults.standard.object(forKey: "SharedName") as? [String] ?? ["Default"]
+>>>>>>> try
   override func viewDidLoad() {
     super.viewDidLoad()
    
@@ -46,12 +63,16 @@ class ViewController: UIViewController {
     setlayout()
     observerItems()
     userDefaultSet()
+<<<<<<< HEAD
     recognizer()
 //  recognizer2()
+=======
+>>>>>>> try
   }
   
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+<<<<<<< HEAD
     load()
   }
   
@@ -146,6 +167,56 @@ class ViewController: UIViewController {
     arrayTime.append(retrievedTime)
     arrayTitle.append(retrievedTitle)
     arrayText.append(retrievedText)
+=======
+      load()
+      
+//
+//      NotificationCenter.default.addObserver(forName: NSNotification.Name("updateArrayShared"),
+//                                              object: nil, queue: .main) { (notification) in
+//
+//
+//        UserDefaults.standard.object(forKey: "SharedName")
+//      }
+      
+  }
+  
+//  @objc func rewriteShareArray(notification: NSNotification){
+//
+//    guard let retrivedSharedData = UserDefaults.standard.string(forKey: "SharedName") else {
+//      return
+//    }
+//
+//    self.newSharedArrayView.append(retrivedSharedData)
+//
+//    let index = IndexPath.init(
+//          item: self.newSharedArrayView.count-1,
+//                                   section: 0)
+//
+//    self.sharedTable.insertRows(at: [index], with: .fade)
+//
+//    UserDefaults.standard.set(self.newSharedArrayView, forKey: "SharedName")
+//  }
+  
+  @objc func rewritingArrays(notification: NSNotification){
+   
+  guard let retrievedDate = UserDefaults.standard.string(
+            forKey: "DateText"),
+
+        let  retrievedTime = UserDefaults.standard.string(
+                  forKey: "DateTime"),
+            
+        let retrievedTitle = UserDefaults.standard.string(
+            forKey: "TitleText"),
+          
+        let retrievedText = UserDefaults.standard.string(
+            forKey: "TagText") else {
+      return
+    }
+    self.arrayDate.append(retrievedDate)
+    self.arrayTime.append(retrievedTime)
+    self.arrayTitle.append(retrievedTitle)
+    self.arrayText.append(retrievedText)
+>>>>>>> try
 
 let index = IndexPath.init(
       item: self.arrayTitle.count-1,
@@ -153,6 +224,7 @@ let index = IndexPath.init(
 
 self.homeworkCollection.insertItems(at: [index])
 
+<<<<<<< HEAD
     UserDefaults.standard.set(arrayDate, forKey: "DateText")
     UserDefaults.standard.set(arrayTime, forKey: "DateTime")
     UserDefaults.standard.set(arrayTitle, forKey: "TitleText")
@@ -174,10 +246,20 @@ self.homeworkCollection.insertItems(at: [index])
     UserDefaults.standard.set(arrayText, forKey: "TagText")
     
   }
+=======
+      UserDefaults.standard.set(self.arrayDate, forKey: "DateText")
+      UserDefaults.standard.set(self.arrayTime, forKey: "DateTime")
+
+      UserDefaults.standard.set(self.arrayTitle, forKey: "TitleText")
+      UserDefaults.standard.set(self.arrayText, forKey: "TagText")
+  
+    }
+>>>>>>> try
 }
 //MARK: COLLECTIONVIEW
 
 extension ViewController : UICollectionViewDelegate {
+<<<<<<< HEAD
 
   func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
           return true
@@ -223,37 +305,75 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
                           self.removeCollection(index: indexPath.item)
                         }))
   
+=======
+  
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+ 
+  
+  let alertCell = UIAlertController(
+                   title: arrayDate[indexPath.row] + "\n" ,
+                   message: arrayText[indexPath.row] ,
+                   preferredStyle: .alert)
+  
+  alertCell.title?.append(arrayTitle[indexPath.row])
+  alertCell.addAction(UIAlertAction(
+                        title: "Edit",
+                        style: .default,
+                        handler:  nil))
+>>>>>>> try
   alertCell.addAction(UIAlertAction(title: "Dismiss",
                                     style: .cancel,
                                     handler: nil))
  
   present(alertCell, animated: true, completion: nil)
   
+<<<<<<< HEAD
   }
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
    return self.arrayText.count
   }
 }
 //MARK: Cell DataSource
+=======
+  
+  }
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+   return self.arrayText.count
+}
+  
+}
+>>>>>>> try
 extension ViewController :  UICollectionViewDataSource{
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
     let cell : CollectionViewCell = homeworkCollection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
 
+<<<<<<< HEAD
     cell.postTitleLabel.text = self.arrayTitle[indexPath.item]
     cell.postTime.text = self.arrayDate[indexPath.item]
     cell.postTimeHours.text = self.arrayTime[indexPath.item]
     cell.postText.text = self.arrayText[indexPath.item]
 
 //MARK: GradientLayer
+=======
+     cell.postTitleLabel.text = self.arrayTitle[indexPath.row]
+     cell.postTime.text = self.arrayDate[indexPath.row]
+     cell.postTimeHours.text = self.arrayTime[indexPath.row]
+     cell.postText.text = self.arrayText[indexPath.row]
+
+
+>>>>>>> try
    let gradientLayer = CAGradientLayer()
        gradientLayer.colors = [UIColor.init(cgColor: #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)).cgColor,
                                UIColor.init(cgColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).cgColor]
        gradientLayer.locations = [0.0,1.0]
        gradientLayer.frame = cell.bounds
     
+<<<<<<< HEAD
     //MARK: Cell Layer
+=======
+>>>>>>> try
     cell.clipsToBounds = true
     cell.layer.addSublayer(gradientLayer)
     cell.layer.insertSublayer(gradientLayer, at: 0)
@@ -261,12 +381,18 @@ extension ViewController :  UICollectionViewDataSource{
     cell.layer.cornerRadius = 8
     cell.layer.borderWidth = 2
     cell.layer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+<<<<<<< HEAD
     return cell
+=======
+
+ return cell
+>>>>>>> try
   }
 }
 
 extension ViewController{
   
+<<<<<<< HEAD
   @objc func load() {
     
    if let loadData = UserDefaults.standard.value(forKey: "shared") as? Data {
@@ -283,13 +409,36 @@ extension ViewController{
           UserDefaults.standard.set(sharedArray, forKey: "shared")
       }
 //MARK: Searchbar
+=======
+  func load() {
+         
+    if let loadData = UserDefaults.standard.value(forKey: "shared") as? Data {
+       let decoder = JSONDecoder()
+      let myArray = try? decoder.decode([Section].self, from: loadData)
+            sharedArray = myArray!
+            sharedTable.reloadData()
+          }
+  }
+  
+//  func save() {
+//          let encoder = JSONEncoder()
+//    let myArray = try? encoder.encode(sharedArray)
+//          UserDefaults.standard.set(myArray, forKey: "shared")
+//      }
+
+>>>>>>> try
   func updateSearchResults(for searchController: UISearchController) {
        guard let text = searchController.searchBar.text else { return }
        print(text)
    }
+<<<<<<< HEAD
   //MARK: Layout
    func setlayout(){
     
+=======
+  
+   func setlayout(){
+>>>>>>> try
       searchBar.layer.cornerRadius = 8
        UITextField.appearance(
          whenContainedInInstancesOf: [
@@ -305,12 +454,26 @@ extension ViewController{
      addHomeworkButton.addTarget(self, action: #selector(addTapped), for: .touchUpInside)
   
    }
+<<<<<<< HEAD
    //MARK: Observer
    func observerItems(){
 
   NotificationCenter.default.addObserver(self, selector: #selector(rewritingArrays),
                                            name: NSNotification.Name(rawValue: "updateArray"),
                                            object: nil)
+=======
+   
+   func observerItems(){
+
+    NotificationCenter.default.addObserver(self, selector: #selector(rewritingArrays),
+                                           name: NSNotification.Name(rawValue: "updateSharedArray"),
+                                           object: nil)
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(rewritingArrays),
+                                           name: NSNotification.Name(rawValue: "updateArray"),
+                                           object: nil)
+    
+>>>>>>> try
   
     NotificationCenter.default.addObserver(forName: NSNotification.Name("updateName"),
                                             object: nil, queue: .main) { (notification) in
@@ -322,7 +485,11 @@ extension ViewController{
        self.customNavigationButton(selector: #selector(self.addTapped2), dataButton: UserDefaults.standard.object(forKey: "ProfileImage") as? Data)
      }
    }
+<<<<<<< HEAD
   //MARK: UserDefault
+=======
+  
+>>>>>>> try
    func userDefaultSet(){
      customNavigationButton(selector: #selector(addTapped2), named: "PersonIcon",
                             tintColor: .red,
@@ -338,6 +505,7 @@ extension ViewController{
 
 extension ViewController : UITableViewDelegate{
   
+<<<<<<< HEAD
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
     return .none
   }
@@ -373,18 +541,31 @@ extension ViewController : UITableViewDelegate{
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+=======
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+>>>>>>> try
     return 60
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+<<<<<<< HEAD
    return sharedArray.count
+=======
+    return sharedArray.count
+    
+>>>>>>> try
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     sharedTable.deselectRow(at: indexPath, animated: true)
     
     if isDone[indexPath.row]{
+<<<<<<< HEAD
 
+=======
+      
+>>>>>>> try
       isDone[indexPath.row] = false
       sharedTable.cellForRow(at: indexPath)?.accessoryType = .none
           }else{
@@ -399,6 +580,7 @@ extension ViewController : UITableViewDataSource{
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = sharedTable.dequeueReusableCell(withIdentifier: "tasksSharedCell", for: indexPath)
         cell.tintColor = UIColor.white
+<<<<<<< HEAD
     
 //MARK: Gradient Layer
     let gradientLayer = CAGradientLayer()
@@ -409,19 +591,37 @@ extension ViewController : UITableViewDataSource{
                       forAlignmentRect: CGRect(
                         x: 0, y: 5,
                          width: cell.bounds.width, height: 50))
+=======
+
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.colors = [UIColor.init(cgColor: #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)).cgColor,
+                            UIColor.init(cgColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).cgColor]
+    gradientLayer.locations = [0.0,1.0]
+    gradientLayer.frame = cell.frame(forAlignmentRect: CGRect(x: 0, y: 5, width: cell.bounds.width, height: 50))
+>>>>>>> try
 
     gradientLayer.cornerRadius = 8
     gradientLayer.borderWidth = 2
     gradientLayer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
      
+<<<<<<< HEAD
     //MARK: Cell DataSource
     
+=======
+>>>>>>> try
     cell.textLabel?.textColor = .white
     cell.layer.addSublayer(gradientLayer)
     cell.layer.insertSublayer(gradientLayer, at: 0)
     
+<<<<<<< HEAD
     cell.textLabel?.text = self.sharedArray[indexPath.row]
   
+=======
+    cell.textLabel?.text = sharedArray[indexPath.section].tasks[indexPath.row].taskName
+//    cell.textLabel?.text = self.newSharedArrayView[indexPath.row]
+    
+    print("sharedArray[indexPath.row]")
+>>>>>>> try
     if isDone[indexPath.row]{
       cell.accessoryType = .checkmark
          } else {
