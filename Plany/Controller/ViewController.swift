@@ -18,6 +18,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var homeworkCollection: UICollectionView!
   @IBOutlet var sharedTable: UITableView!
 <<<<<<< HEAD
+<<<<<<< HEAD
   var longPressedEnabled: Bool!
   var datePicker: UIDatePicker! 
  
@@ -40,17 +41,24 @@ class ViewController: UIViewController {
   
   //MARK: ViewDidLoad
 =======
+=======
+
+  var arrayDate: [String] = []
+  var arrayTime: [String] = []
+  var arrayTitle: [String] = []
+  var arrayText: [String] = []
+  var sharedArray: [String] = []
+>>>>>>> feature/refactor
   
-  var arrayDate: [String] = UserDefaults.standard.object(forKey: "DateText") as? [String] ?? ["Date"]
-  var arrayTime: [String] = UserDefaults.standard.object(forKey: "DateTime") as? [String] ?? ["Time"]
-  var arrayTitle: [String] = UserDefaults.standard.object(forKey: "TitleText") as? [String] ?? ["Title"]
-  var arrayText: [String] = UserDefaults.standard.object(forKey: "TagText") as? [String] ?? ["Text"]
- 
   var isDone: [Bool] = UserDefaults.standard.object(forKey: "isDone") as? [Bool] ?? [false, false, false, false, false,false, false, false, false, false,false, false, false, false, false]
   
+<<<<<<< HEAD
   var sharedArray: [Section] = []
 //  var newSharedArrayView: [String] = UserDefaults.standard.object(forKey: "SharedName") as? [String] ?? ["Default"]
 >>>>>>> try
+=======
+  //MARK: ViewDidLoad
+>>>>>>> feature/refactor
   override func viewDidLoad() {
     super.viewDidLoad()
    
@@ -170,48 +178,26 @@ class ViewController: UIViewController {
 =======
       load()
       
-//
-//      NotificationCenter.default.addObserver(forName: NSNotification.Name("updateArrayShared"),
-//                                              object: nil, queue: .main) { (notification) in
-//
-//
-//        UserDefaults.standard.object(forKey: "SharedName")
-//      }
-      
+    //  observerForTable()
   }
-  
-//  @objc func rewriteShareArray(notification: NSNotification){
-//
-//    guard let retrivedSharedData = UserDefaults.standard.string(forKey: "SharedName") else {
-//      return
-//    }
-//
-//    self.newSharedArrayView.append(retrivedSharedData)
-//
-//    let index = IndexPath.init(
-//          item: self.newSharedArrayView.count-1,
-//                                   section: 0)
-//
-//    self.sharedTable.insertRows(at: [index], with: .fade)
-//
-//    UserDefaults.standard.set(self.newSharedArrayView, forKey: "SharedName")
-//  }
-  
+
+ // MARK: Rewrite Array Retrived
   @objc func rewritingArrays(notification: NSNotification){
-   
+
   guard let retrievedDate = UserDefaults.standard.string(
-            forKey: "DateText"),
+                  forKey: "DateText"),
 
         let  retrievedTime = UserDefaults.standard.string(
                   forKey: "DateTime"),
-            
+
         let retrievedTitle = UserDefaults.standard.string(
-            forKey: "TitleText"),
-          
+                  forKey: "TitleText"),
+
         let retrievedText = UserDefaults.standard.string(
-            forKey: "TagText") else {
+                  forKey: "TagText")  else {
       return
     }
+
     self.arrayDate.append(retrievedDate)
     self.arrayTime.append(retrievedTime)
     self.arrayTitle.append(retrievedTitle)
@@ -224,6 +210,7 @@ let index = IndexPath.init(
 
 self.homeworkCollection.insertItems(at: [index])
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     UserDefaults.standard.set(arrayDate, forKey: "DateText")
     UserDefaults.standard.set(arrayTime, forKey: "DateTime")
@@ -249,16 +236,20 @@ self.homeworkCollection.insertItems(at: [index])
 =======
       UserDefaults.standard.set(self.arrayDate, forKey: "DateText")
       UserDefaults.standard.set(self.arrayTime, forKey: "DateTime")
+=======
+    UserDefaults.standard.set(self.arrayDate, forKey: "DateText")
+    UserDefaults.standard.set(self.arrayTime, forKey: "DateTime")
+>>>>>>> feature/refactor
 
-      UserDefaults.standard.set(self.arrayTitle, forKey: "TitleText")
-      UserDefaults.standard.set(self.arrayText, forKey: "TagText")
-  
+    UserDefaults.standard.set(self.arrayTitle, forKey: "TitleText")
+    UserDefaults.standard.set(self.arrayText, forKey: "TagText")
     }
 >>>>>>> try
 }
 //MARK: COLLECTIONVIEW
 
 extension ViewController : UICollectionViewDelegate {
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
@@ -307,9 +298,12 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
   
 =======
   
+=======
+
+>>>>>>> feature/refactor
 func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
  
-  
+  //MARK: Alert
   let alertCell = UIAlertController(
                    title: arrayDate[indexPath.row] + "\n" ,
                    message: arrayText[indexPath.row] ,
@@ -328,6 +322,7 @@ func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPat
   present(alertCell, animated: true, completion: nil)
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
    return self.arrayText.count
@@ -336,19 +331,27 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 //MARK: Cell DataSource
 =======
   
+=======
+>>>>>>> feature/refactor
   }
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
    return self.arrayText.count
+  }
 }
+<<<<<<< HEAD
   
 }
 >>>>>>> try
+=======
+//MARK: Cell DataSource
+>>>>>>> feature/refactor
 extension ViewController :  UICollectionViewDataSource{
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
     let cell : CollectionViewCell = homeworkCollection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     cell.postTitleLabel.text = self.arrayTitle[indexPath.item]
     cell.postTime.text = self.arrayDate[indexPath.item]
@@ -364,6 +367,14 @@ extension ViewController :  UICollectionViewDataSource{
 
 
 >>>>>>> try
+=======
+    cell.postTitleLabel.text = self.arrayTitle[indexPath.row]
+    cell.postTime.text = self.arrayDate[indexPath.row]
+    cell.postTimeHours.text = self.arrayTime[indexPath.row]
+    cell.postText.text = self.arrayText[indexPath.row]
+
+//MARK: GradientLayer
+>>>>>>> feature/refactor
    let gradientLayer = CAGradientLayer()
        gradientLayer.colors = [UIColor.init(cgColor: #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)).cgColor,
                                UIColor.init(cgColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).cgColor]
@@ -371,9 +382,13 @@ extension ViewController :  UICollectionViewDataSource{
        gradientLayer.frame = cell.bounds
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     //MARK: Cell Layer
 =======
 >>>>>>> try
+=======
+    //MARK: Cell Layer
+>>>>>>> feature/refactor
     cell.clipsToBounds = true
     cell.layer.addSublayer(gradientLayer)
     cell.layer.insertSublayer(gradientLayer, at: 0)
@@ -385,12 +400,17 @@ extension ViewController :  UICollectionViewDataSource{
     return cell
 =======
 
+<<<<<<< HEAD
  return cell
 >>>>>>> try
+=======
+    return cell
+>>>>>>> feature/refactor
   }
 }
 
 extension ViewController{
+<<<<<<< HEAD
   
 <<<<<<< HEAD
   @objc func load() {
@@ -412,14 +432,21 @@ extension ViewController{
 =======
   func load() {
          
+=======
+
+  @objc func load() {
+
+>>>>>>> feature/refactor
     if let loadData = UserDefaults.standard.value(forKey: "shared") as? Data {
        let decoder = JSONDecoder()
-      let myArray = try? decoder.decode([Section].self, from: loadData)
+      let myArray = try? decoder.decode([String].self, from: loadData)
             sharedArray = myArray!
+   
             sharedTable.reloadData()
-          }
+        }
   }
   
+<<<<<<< HEAD
 //  func save() {
 //          let encoder = JSONEncoder()
 //    let myArray = try? encoder.encode(sharedArray)
@@ -427,16 +454,28 @@ extension ViewController{
 //      }
 
 >>>>>>> try
+=======
+  func save() {
+          let encoder = JSONEncoder()
+    let myArray = try? encoder.encode(sharedArray)
+          UserDefaults.standard.set(myArray, forKey: "shared")
+      }
+//MARK: Searchbar
+>>>>>>> feature/refactor
   func updateSearchResults(for searchController: UISearchController) {
        guard let text = searchController.searchBar.text else { return }
        print(text)
    }
+<<<<<<< HEAD
 <<<<<<< HEAD
   //MARK: Layout
    func setlayout(){
     
 =======
   
+=======
+  //MARK: Layout
+>>>>>>> feature/refactor
    func setlayout(){
 >>>>>>> try
       searchBar.layer.cornerRadius = 8
@@ -455,6 +494,7 @@ extension ViewController{
   
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
    //MARK: Observer
    func observerItems(){
 
@@ -463,17 +503,19 @@ extension ViewController{
                                            object: nil)
 =======
    
+=======
+   //MARK: Observer
+>>>>>>> feature/refactor
    func observerItems(){
 
     NotificationCenter.default.addObserver(self, selector: #selector(rewritingArrays),
-                                           name: NSNotification.Name(rawValue: "updateSharedArray"),
-                                           object: nil)
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(rewritingArrays),
                                            name: NSNotification.Name(rawValue: "updateArray"),
                                            object: nil)
+<<<<<<< HEAD
     
 >>>>>>> try
+=======
+>>>>>>> feature/refactor
   
     NotificationCenter.default.addObserver(forName: NSNotification.Name("updateName"),
                                             object: nil, queue: .main) { (notification) in
@@ -486,10 +528,14 @@ extension ViewController{
      }
    }
 <<<<<<< HEAD
+<<<<<<< HEAD
   //MARK: UserDefault
 =======
   
 >>>>>>> try
+=======
+  //MARK: UserDefault
+>>>>>>> feature/refactor
    func userDefaultSet(){
      customNavigationButton(selector: #selector(addTapped2), named: "PersonIcon",
                             tintColor: .red,
@@ -543,18 +589,31 @@ extension ViewController : UITableViewDelegate{
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 =======
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+<<<<<<< HEAD
     
 >>>>>>> try
+=======
+>>>>>>> feature/refactor
     return 60
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+<<<<<<< HEAD
 <<<<<<< HEAD
    return sharedArray.count
 =======
     return sharedArray.count
     
 >>>>>>> try
+=======
+    if section == 0{
+      
+      return sharedArray.count
+    }else{
+      
+      return sharedArray.count + 50
+    }
+>>>>>>> feature/refactor
   }
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -581,6 +640,7 @@ extension ViewController : UITableViewDataSource{
     let cell = sharedTable.dequeueReusableCell(withIdentifier: "tasksSharedCell", for: indexPath)
         cell.tintColor = UIColor.white
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 //MARK: Gradient Layer
     let gradientLayer = CAGradientLayer()
@@ -593,26 +653,44 @@ extension ViewController : UITableViewDataSource{
                          width: cell.bounds.width, height: 50))
 =======
 
+=======
+    
+//MARK: Gradient Layer
+>>>>>>> feature/refactor
     let gradientLayer = CAGradientLayer()
-    gradientLayer.colors = [UIColor.init(cgColor: #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)).cgColor,
+        gradientLayer.colors = [UIColor.init(cgColor: #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)).cgColor,
                             UIColor.init(cgColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).cgColor]
+<<<<<<< HEAD
     gradientLayer.locations = [0.0,1.0]
     gradientLayer.frame = cell.frame(forAlignmentRect: CGRect(x: 0, y: 5, width: cell.bounds.width, height: 50))
 >>>>>>> try
+=======
+        gradientLayer.locations = [0.0,1.0]
+        gradientLayer.frame = cell.frame(
+                      forAlignmentRect: CGRect(
+                        x: 0, y: 5,
+                         width: cell.bounds.width, height: 50))
+>>>>>>> feature/refactor
 
     gradientLayer.cornerRadius = 8
     gradientLayer.borderWidth = 2
     gradientLayer.borderColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
      
 <<<<<<< HEAD
+<<<<<<< HEAD
     //MARK: Cell DataSource
     
 =======
 >>>>>>> try
+=======
+    //MARK: Cell DataSource
+    
+>>>>>>> feature/refactor
     cell.textLabel?.textColor = .white
     cell.layer.addSublayer(gradientLayer)
     cell.layer.insertSublayer(gradientLayer, at: 0)
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     cell.textLabel?.text = self.sharedArray[indexPath.row]
   
@@ -622,6 +700,10 @@ extension ViewController : UITableViewDataSource{
     
     print("sharedArray[indexPath.row]")
 >>>>>>> try
+=======
+    cell.textLabel?.text = sharedArray[indexPath.row]
+  
+>>>>>>> feature/refactor
     if isDone[indexPath.row]{
       cell.accessoryType = .checkmark
          } else {

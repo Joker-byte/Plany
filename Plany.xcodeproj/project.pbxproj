@@ -25,12 +25,16 @@
 <<<<<<< HEAD
 		9AB6FE9E25C7287800DAFC4D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */; };
 		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
 >>>>>>> parent of d331b50... Aggiornamento
 >>>>>>> try
+=======
+		9AF4278C25B743A900099802 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4278B25B743A900099802 /* TableViewController.swift */; };
+>>>>>>> feature/refactor
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,8 +83,12 @@
 <<<<<<< HEAD
 =======
 		9ABA1100258438E80056B47B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 >>>>>>> parent of d331b50... Aggiornamento
 >>>>>>> try
+=======
+		9AF4278B25B743A900099802 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+>>>>>>> feature/refactor
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +222,7 @@
 				9A07CB61254175BA000C2B50 /* ViewController.swift */,
 				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
 				9ABA1100258438E80056B47B /* TasksViewController.swift */,
+				9AF4278B25B743A900099802 /* TableViewController.swift */,
 				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
 			);
 			path = Controller;
@@ -370,12 +379,16 @@
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
 				9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				9AB6FE9E25C7287800DAFC4D /* PickerViewController.swift in Sources */,
 				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
 				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
 =======
 <<<<<<< HEAD
 =======
+=======
+				9AF4278C25B743A900099802 /* TableViewController.swift in Sources */,
+>>>>>>> feature/refactor
 				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
 				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
 >>>>>>> parent of d331b50... Aggiornamento

@@ -29,10 +29,15 @@ extension UIViewController {
     navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   //MARK: Label Navigation
 =======
 >>>>>>> try
+=======
+  
+  //MARK: Label Navigation
+>>>>>>> feature/refactor
   func labelNavigation(textColor: UIColor, text: String){
     let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
     label.numberOfLines = 2
@@ -42,6 +47,7 @@ extension UIViewController {
     navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   //MARK: Function 
 =======
 <<<<<<< HEAD
@@ -49,6 +55,9 @@ extension UIViewController {
 =======
 >>>>>>> parent of d331b50... Aggiornamento
 >>>>>>> try
+=======
+  //MARK: Function 
+>>>>>>> feature/refactor
   @objc func addTapped () {
     guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
       return
@@ -64,6 +73,7 @@ extension UIViewController {
     vc.modalPresentationStyle = .overFullScreen
     navigationController?.pushViewController(vc, animated: true)
   }
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   
@@ -82,6 +92,10 @@ extension UIViewController {
   func alertPresent(textTitle: String, mexText : String, actTitle: String) {
   
 =======
+=======
+  
+  // MARK: Alert
+>>>>>>> feature/refactor
   func alertPresent(textTitle: String, mexText : String, actTitle: String) {
   
 <<<<<<< HEAD
@@ -216,6 +230,7 @@ extension UIViewController {
                 completion: nil)
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   
   //MARK: finire change datepicker
@@ -230,6 +245,8 @@ extension UIViewController {
 
   
   
+=======
+>>>>>>> feature/refactor
   
   //MARK: UserDefaults handler
   
@@ -242,9 +259,14 @@ extension UIViewController {
   @objc func DefaultString(key: String){
     UserDefaults.standard.string(forKey: key)
   }
+<<<<<<< HEAD
 }
 
 =======
 }
 >>>>>>> parent of d331b50... Aggiornamento
 >>>>>>> try
+=======
+}
+
+>>>>>>> feature/refactor

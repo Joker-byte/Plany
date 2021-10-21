@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   
   var optionArray : [String] = ["Option1", "Option1", "Option1", "Option1", "Option1"]
 //MARK: ViewDidLoad
+<<<<<<< HEAD
 =======
 
   let imagePicker = UIImagePickerController()
@@ -27,12 +28,15 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
 >>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
 
 >>>>>>> try:Plany/ProfileViewController.swift
+=======
+>>>>>>> feature/refactor
   override func viewDidLoad() {
     super.viewDidLoad()
     
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
    
+<<<<<<< HEAD
 <<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
     //self.profileTable.delegate = self
     self.profileTable.dataSource = self
@@ -41,6 +45,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
 <<<<<<< HEAD:Plany/ProfileViewController.swift
 =======
     self.profileTable.delegate = self
+=======
+    //self.profileTable.delegate = self
+>>>>>>> feature/refactor
     self.profileTable.dataSource = self
    
 >>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
@@ -53,6 +60,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
 }
 extension ProfileViewController {
   //MARK: Control Existence
+<<<<<<< HEAD
  func controlexistence(){
     
 =======
@@ -61,6 +69,8 @@ extension ProfileViewController {
 
 extension ProfileViewController {
   
+=======
+>>>>>>> feature/refactor
  func controlexistence(){
     
 >>>>>>> try:Plany/ProfileViewController.swift
@@ -85,6 +95,7 @@ extension ProfileViewController {
     }
   }
   //MARK: Picker Controller
+<<<<<<< HEAD
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
     }
@@ -94,6 +105,8 @@ extension ProfileViewController {
     dismiss(animated: true, completion: nil)
   }
   
+=======
+>>>>>>> feature/refactor
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
     }
@@ -160,11 +173,15 @@ extension ProfileViewController {
     UserDefaults.standard.set(nome, forKey: "UserName")
     UserDefaults.standard.set(cognome, forKey: "UserSurname")
   }
+<<<<<<< HEAD
 <<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
   //MARK: Layout
   func setLayout(){
 =======
   
+=======
+  //MARK: Layout
+>>>>>>> feature/refactor
   func setLayout(){
     
 >>>>>>> try:Plany/ProfileViewController.swift
@@ -196,7 +213,14 @@ extension ProfileViewController {
 =======
 }
 
+<<<<<<< HEAD
 >>>>>>> try:Plany/ProfileViewController.swift
+=======
+//extension ProfileViewController: UITableViewDelegate {
+//
+//}
+//MARK: Table View DataSource
+>>>>>>> feature/refactor
 extension ProfileViewController : UITableViewDataSource{
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -214,6 +238,7 @@ extension ProfileViewController : UITableViewDataSource{
   }
 }
 
+<<<<<<< HEAD
 =======
 >>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
   
@@ -225,3 +250,5 @@ extension ProfileViewController: UITableViewDelegate {
 }
 >>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
 >>>>>>> try:Plany/ProfileViewController.swift
+=======
+>>>>>>> feature/refactor

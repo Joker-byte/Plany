@@ -22,12 +22,18 @@ class TasksViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
 
   var omniItem: [Section] = []
+<<<<<<< HEAD
   
   var sharedArrayTask: [Section] = []
   
 //  var newSharedArrey: [String] = UserDefaults.standard.object(forKey: "SharedName")as? [String] ?? [""]
     
 >>>>>>> try
+=======
+
+  var sharedArrayTask: [String] = []
+
+>>>>>>> feature/refactor
   var isDone: [Bool] = UserDefaults.standard.object(forKey: "isDone")
     as? [Bool] ?? [false, false, false, false, false,false,
                    false, false, false, false,false, false,
@@ -87,21 +93,25 @@ class TasksViewController: UIViewController {
   if inputTextField.text == "" {
        alertPresent(textTitle: "Hey Dude", mexText: "Text Field can't be Empty", actTitle: "Cancel")
        } else {
-        guard let text = self.inputTextField.text else {
+        guard let text = self.inputTextField.text
+              
+        else {
           return
         }
-        if omniItem.isEmpty {
+        
+        if omniItem.isEmpty{
            omniItem.append(Section(name: "To Do", tasks: [
                                     Task(taskName: text, shared: false, isDone: false)]))
-            save()
         } else {
           omniItem[0].tasks.append(Task(taskName: text, shared: false, isDone: false))
-              save()
+              
         }
-          self.tableView.reloadData()
+        save()
+        self.tableView.reloadData()
         }
    inputTextField.text = ""
   }
+  
 // Edit Button
   @objc func editButton_clicked() {
       self.tableView.setEditing(!self.tableView.isEditing, animated: true)
@@ -117,6 +127,7 @@ class TasksViewController: UIViewController {
 <<<<<<< HEAD
 =======
   
+<<<<<<< HEAD
     navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editButton)
 >>>>>>> try
     
@@ -149,6 +160,13 @@ class TasksViewController: UIViewController {
     UserDefaults.standard.set(myArray, forKey: "shared")
   }
 =======
+=======
+    inputTextField.layer.cornerRadius = inputTextField.frame.height/2
+    inputTextField.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+    inputTextField.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+    
+    navigationItem.rightBarButtonItem = UIBarButtonItem(customView: editButton)
+>>>>>>> feature/refactor
   }
   
   func load() {
@@ -175,6 +193,7 @@ class TasksViewController: UIViewController {
 }
 //MARK: TableView DataSource
 extension TasksViewController: UITableViewDataSource {
+<<<<<<< HEAD
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 <<<<<<< HEAD
     if omniItem[section].tasks.isEmpty {
@@ -253,31 +272,69 @@ extension TasksViewController: UITableViewDataSource {
           cell.accessoryType = .none
         }
 =======
+=======
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+>>>>>>> feature/refactor
       return 36
+  }
+  
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+  {
+       tableView.deselectRow(at: indexPath, animated: true)
+    
+      let text = omniItem[indexPath.section].tasks[indexPath.row].taskName
+    
+    if isDone[indexPath.row] == false{
+        isDone[indexPath.row] = true
+       tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+
+      
+      if omniItem.count == 1 {
+         omniItem.append(Section(name: "Done", tasks: [
+                                  Task(taskName: text, shared: false, isDone: true)]))
+        
+  } else {
+        
+    
+         omniItem[1].tasks.append(Task(taskName: text, shared: false, isDone: true))
+      }
+      
+        omniItem[0].tasks.remove(at: indexPath.row)
+      
+      if omniItem[0].tasks.count  == 0 {
+            omniItem.remove(at: indexPath.section)
+            }
+      
+      save()
+      
+      self.tableView.reloadData()
+  
+    } else {
+      isDone[indexPath.row] = false
+      
+      tableView.cellForRow(at: indexPath)?.accessoryType = .none
+ 
+    omniItem[0].tasks.append(Task(taskName: text, shared: false, isDone: false))
+    
+    omniItem[1].tasks.remove(at: indexPath.row)
+      
+      if omniItem[1].tasks.count  == 0 {
+              omniItem.remove(at: indexPath.section)
+            }
+      save()
+      self.tableView.reloadData()
+    }
+    
   }
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
       let label = UILabel()
-    label.text = omniItem[section].name
-      label.textColor = .white
-      label.textAlignment = .center
-      label.backgroundColor = #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)
+          label.text = omniItem[section].name
+          label.textColor = .white
+          label.textAlignment = .center
+          label.backgroundColor = #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)
       return label
-  }
-  
-  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    tableView.deselectRow(at: indexPath, animated: true)
-    
-    
-    
-    if isDone[indexPath.row]{
-      
-      isDone[indexPath.row] = false
-      tableView.cellForRow(at: indexPath)?.accessoryType = .none
-          }else{
-      isDone[indexPath.row] = true
-      tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-    }
   }
 
 func numberOfSections(in tableView: UITableView) -> Int {
@@ -285,14 +342,16 @@ func numberOfSections(in tableView: UITableView) -> Int {
   }
 
  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-  //  omniItem[section].collapsed ? 0 : omniItem[section].tasks.count
-  return  omniItem[section].tasks.count
+  
+    return omniItem[section].tasks.count
+  
   }
 //MARK: Reusable Cell
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
  let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
      cell.tintColor = UIColor.black
+<<<<<<< HEAD
      cell.textLabel?.text = omniItem[indexPath.section].tasks[indexPath.row].taskName
     
     
@@ -304,6 +363,15 @@ func numberOfSections(in tableView: UITableView) -> Int {
 //      omniItem[indexPath.section].tasks[indexPath.row].shared = false
     }
 >>>>>>> try
+=======
+     cell.textLabel?.text =      omniItem[indexPath.section].tasks[indexPath.row].taskName
+  
+//    if isDone[indexPath.row] == true {
+//      cell.accessoryType = .checkmark
+//    } else {
+//      cell.accessoryType = .none
+//    }
+>>>>>>> feature/refactor
     return cell
   }
 }
@@ -367,7 +435,7 @@ extension TasksViewController: UITableViewDelegate {
 =======
 
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-      return .none
+    return .none
   }
 
   func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
@@ -375,13 +443,9 @@ extension TasksViewController: UITableViewDelegate {
   }
 
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//      print("🤖", sourceIndexPath.row, destinationIndexPath.row)
-//      print(array)
-//      self.array.swapAt(sourceIndexPath.row, destinationIndexPath.row)
-//      print(array)
-//      UserDefaults.standard.set(array, forKey: "myKey")
-
-  }
+      self.omniItem.swapAt(sourceIndexPath.row, destinationIndexPath.row)
+    
+}
   
   func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 //MARK: DELETE ACTION
@@ -390,32 +454,31 @@ extension TasksViewController: UITableViewDelegate {
           title: "Delete")
       { (action, index) in
           print("🤖 Delete", index.row)
-        self.omniItem[0].tasks.remove(at: index.row)
-              tableView.deleteRows(at: [index], with: .right)
+        self.omniItem[indexPath.section].tasks.remove(at: index.row)
+            
+        tableView.deleteRows(at: [index], with: .right)
+        
         self.save()
         self.tableView.reloadData()
       }
        action.backgroundColor = #colorLiteral(red: 0.9267585874, green: 0.367726624, blue: 0.3804723024, alpha: 1)
+    
 //MARK: SHARE ACTION
+    
     let actionShare = UITableViewRowAction.init(
           style: .normal,
           title: "Share")
       { (action, index) in
-      
-      self.sharedArrayTask.append(self.omniItem[indexPath.section])
-      
-      self.sharedArrayTask.append(self.omniItem[indexPath.section])
-      
-      self.omniItem[0].tasks.remove(at: index.row)
-            tableView.deleteRows(at: [index], with: .right)
+
+     self.sharedArrayTask.append(self.omniItem[indexPath.section].tasks[indexPath.row].taskName)
+   
+      self.omniItem[indexPath.section].tasks.remove(
+          at: index.row)
+              tableView.deleteRows(
+                  at: [index], with: .right)
       
       self.save()
       self.save2()
-//      UserDefaults.standard.set(self.newSharedArrey, forKey: "SharedName")
-//      NotificationCenter.default.post(
-//        name: NSNotification.Name(
-//          rawValue: "updateArrayShared"),
-//            object: nil)
       print("🤖 Share", index.row)
       }
    actionShare.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
