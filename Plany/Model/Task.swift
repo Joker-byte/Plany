@@ -9,12 +9,11 @@ import Foundation
 import UIKit
 struct Section: Codable {
   var name: String
-
   var tasks: [Task]
   
   enum CodingKeys: String, CodingKey {
    case name
-    case tasks
+   case tasks
   
   }
 }

@@ -14,13 +14,27 @@
 		9A07CB6D254175BC000C2B50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */; };
 		9A07CB78254175BC000C2B50 /* PlanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB77254175BC000C2B50 /* PlanyTests.swift */; };
 		9A07CB83254175BC000C2B50 /* PlanyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A07CB82254175BC000C2B50 /* PlanyUITests.swift */; };
+<<<<<<< HEAD
 		9A0ABC0A258D535B00211138 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0ABC09258D535B00211138 /* Task.swift */; };
+=======
+>>>>>>> try
 		9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A50E36A254744F700910B8D /* UiViewController+.swift */; };
 		9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */; };
 		9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7524922541D03F00BAD0EC /* CalendarViewController.swift */; };
 		9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9040E42547A11F007FAC33 /* ProfileViewController.swift */; };
+<<<<<<< HEAD
+		9AB6FE9E25C7287800DAFC4D /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */; };
 		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+		9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA1100258438E80056B47B /* TasksViewController.swift */; };
+>>>>>>> parent of d331b50... Aggiornamento
+>>>>>>> try
+=======
 		9AF4278C25B743A900099802 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4278B25B743A900099802 /* TableViewController.swift */; };
+>>>>>>> feature/refactor
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +68,27 @@
 		9A07CB7E254175BC000C2B50 /* PlanyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A07CB82254175BC000C2B50 /* PlanyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanyUITests.swift; sourceTree = "<group>"; };
 		9A07CB84254175BC000C2B50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		9A0ABC09258D535B00211138 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> try
 		9A50E36A254744F700910B8D /* UiViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+.swift"; sourceTree = "<group>"; };
 		9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9A7524922541D03F00BAD0EC /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9A9040E42547A11F007FAC33 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		9ABA1100258438E80056B47B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+=======
+<<<<<<< HEAD
+=======
+		9ABA1100258438E80056B47B /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+>>>>>>> parent of d331b50... Aggiornamento
+>>>>>>> try
+=======
 		9AF4278B25B743A900099802 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+>>>>>>> feature/refactor
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +140,20 @@
 			isa = PBXGroup;
 			children = (
 				9A07CB5D254175BA000C2B50 /* AppDelegate.swift */,
+<<<<<<< HEAD
 				9A50E369254744B700910B8D /* Extension */,
 				9A887C122588F7F100F8DE36 /* Model */,
 				9AB5117D2584096D00D9E215 /* View */,
 				9AB511752584091500D9E215 /* Controller */,
+=======
+				9A07CB61254175BA000C2B50 /* ViewController.swift */,
+				9A141D952581B84200F151FE /* Collection */,
+				9A50E369254744B700910B8D /* Extension */,
+				9A7524922541D03F00BAD0EC /* CalendarViewController.swift */,
+				9A9040E42547A11F007FAC33 /* ProfileViewController.swift */,
+				9A07CB63254175BA000C2B50 /* Main.storyboard */,
+				9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */,
+>>>>>>> try
 				9A07CB69254175BC000C2B50 /* Assets.xcassets */,
 				9A07CB6E254175BC000C2B50 /* Info.plist */,
 			);
@@ -140,12 +178,20 @@
 			path = PlanyUITests;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		9A0ABC0F258D545F00211138 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				9A670C7E2581BD77000A08BB /* CollectionViewCell.swift */,
 			);
 			path = Cell;
+=======
+		9A141D952581B84200F151FE /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Collection;
+>>>>>>> try
 			sourceTree = "<group>";
 		};
 		9A50E369254744B700910B8D /* Extension */ = {
@@ -156,6 +202,11 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> try
 		9A887C122588F7F100F8DE36 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,11 +232,19 @@
 			isa = PBXGroup;
 			children = (
 				9A07CB63254175BA000C2B50 /* Main.storyboard */,
+<<<<<<< HEAD
+				9AB6FE9D25C7287800DAFC4D /* PickerViewController.swift */,
+=======
+>>>>>>> try
 				9A07CB6B254175BC000C2B50 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
+>>>>>>> parent of d331b50... Aggiornamento
+>>>>>>> try
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,9 +378,21 @@
 				9A9040E52547A11F007FAC33 /* ProfileViewController.swift in Sources */,
 				9A7524932541D03F00BAD0EC /* CalendarViewController.swift in Sources */,
 				9A670C7F2581BD77000A08BB /* CollectionViewCell.swift in Sources */,
-				9AF4278C25B743A900099802 /* TableViewController.swift in Sources */,
+<<<<<<< HEAD
+<<<<<<< HEAD
+				9AB6FE9E25C7287800DAFC4D /* PickerViewController.swift in Sources */,
 				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
 				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
+=======
+<<<<<<< HEAD
+=======
+=======
+				9AF4278C25B743A900099802 /* TableViewController.swift in Sources */,
+>>>>>>> feature/refactor
+				9A0ABC0A258D535B00211138 /* Task.swift in Sources */,
+				9ABA1101258438E80056B47B /* TasksViewController.swift in Sources */,
+>>>>>>> parent of d331b50... Aggiornamento
+>>>>>>> try
 				9A07CB62254175BA000C2B50 /* ViewController.swift in Sources */,
 				9A50E36B254744F700910B8D /* UiViewController+.swift in Sources */,
 				9A07CB5E254175BA000C2B50 /* AppDelegate.swift in Sources */,

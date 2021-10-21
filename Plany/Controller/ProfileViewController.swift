@@ -10,30 +10,70 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate ,
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var surnameField: UITextField!
   @IBOutlet weak var changeImage: UIButton!
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
   @IBOutlet var profileTable: UITableView!
   
   let imagePicker = UIImagePickerController()
   
   var optionArray : [String] = ["Option1", "Option1", "Option1", "Option1", "Option1"]
 //MARK: ViewDidLoad
+<<<<<<< HEAD
+=======
+
+  let imagePicker = UIImagePickerController()
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+  
+  var optionArray : [String] = ["Option1", "Option1", "Option1", "Option1", "Option1"]
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
+
+>>>>>>> try:Plany/ProfileViewController.swift
+=======
+>>>>>>> feature/refactor
   override func viewDidLoad() {
     super.viewDidLoad()
     
     imagePicker.delegate = self
     imagePicker.allowsEditing = true
    
+<<<<<<< HEAD
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
     //self.profileTable.delegate = self
     self.profileTable.dataSource = self
    
+=======
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+    self.profileTable.delegate = self
+=======
+    //self.profileTable.delegate = self
+>>>>>>> feature/refactor
+    self.profileTable.dataSource = self
+   
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
+>>>>>>> try:Plany/ProfileViewController.swift
     controlexistence()
     userDefault()
     setLayout()
   }
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
 }
 extension ProfileViewController {
   //MARK: Control Existence
+<<<<<<< HEAD
  func controlexistence(){
     
+=======
+    
+}
+
+extension ProfileViewController {
+  
+=======
+>>>>>>> feature/refactor
+ func controlexistence(){
+    
+>>>>>>> try:Plany/ProfileViewController.swift
     if let existStringName = UserDefaults.standard.string(forKey: "UserName"){
       nameField.text = existStringName
       
@@ -55,6 +95,18 @@ extension ProfileViewController {
     }
   }
   //MARK: Picker Controller
+<<<<<<< HEAD
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
+    }
+    profileImage.image = pickedImage
+    let pngIcon = pickedImage.pngData()
+    UserDefaults.standard.set(pngIcon, forKey: "ProfileImage")
+    dismiss(animated: true, completion: nil)
+  }
+  
+=======
+>>>>>>> feature/refactor
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
     guard let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else { return
     }
@@ -121,30 +173,60 @@ extension ProfileViewController {
     UserDefaults.standard.set(nome, forKey: "UserName")
     UserDefaults.standard.set(cognome, forKey: "UserSurname")
   }
+<<<<<<< HEAD
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
   //MARK: Layout
   func setLayout(){
+=======
+  
+=======
+  //MARK: Layout
+>>>>>>> feature/refactor
+  func setLayout(){
+    
+>>>>>>> try:Plany/ProfileViewController.swift
       profileImage.contentMode = .scaleAspectFill
       profileImage.clipsToBounds = true
       profileImage.layer.cornerRadius = profileImage.frame.height/2
      customNavigationButtonSave(selector: #selector(saveNameSurname), named: "SaveIcon", tintColor: .blue)
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
+  }
+
+=======
     
   }
   
+>>>>>>> try:Plany/ProfileViewController.swift
   func userDefault(){
       nameField.text = UserDefaults.standard.string(forKey: "UserName")
       surnameField.text = UserDefaults.standard.string(forKey: "UserSurname")
   }
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
 }
 
 //extension ProfileViewController: UITableViewDelegate {
 //
 //}
 //MARK: Table View DataSource
+=======
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+}
+
+<<<<<<< HEAD
+>>>>>>> try:Plany/ProfileViewController.swift
+=======
+//extension ProfileViewController: UITableViewDelegate {
+//
+//}
+//MARK: Table View DataSource
+>>>>>>> feature/refactor
 extension ProfileViewController : UITableViewDataSource{
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.optionArray.count
   }
+<<<<<<< HEAD:Plany/Controller/ProfileViewController.swift
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      let cell = profileTable.dequeueReusableCell(withIdentifier: "optionCell", for: indexPath)
@@ -156,3 +238,17 @@ extension ProfileViewController : UITableViewDataSource{
   }
 }
 
+<<<<<<< HEAD
+=======
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
+  
+}
+<<<<<<< HEAD:Plany/ProfileViewController.swift
+=======
+extension ProfileViewController: UITableViewDelegate {
+  
+}
+>>>>>>> parent of d331b50... Aggiornamento:Plany/Controller/ProfileViewController.swift
+>>>>>>> try:Plany/ProfileViewController.swift
+=======
+>>>>>>> feature/refactor
