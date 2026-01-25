@@ -32,6 +32,7 @@ struct Task: Codable {
    case isDone
     
   }
+    
 //  init(from decoder: Decoder) throws {
 //          let container = try decoder.container(keyedBy: CodingKeys.self)
 //          taskName = try container.decode(String.self, forKey: .taskName)
@@ -39,7 +40,16 @@ struct Task: Codable {
 //         isDone = try container.decode(Bool.self, forKey: .isDone)
 //  }
 }
-
+struct Reminder : Codable {
+    var date: Date?
+    var text: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case date
+        case text
+    }
+    
+}
 //import Foundation
 //
 //struct Section {

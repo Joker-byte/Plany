@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class TasksViewController: UIViewController {
   
@@ -14,12 +15,10 @@ class TasksViewController: UIViewController {
   
   var omniItem: [Section] = []
   
-  var sharedArrayTask: [String] = []
+  var sharedArrayTask: [Task] = []
   
   var isDone: [Bool] = UserDefaults.standard.object(forKey: "isDone")
-    as? [Bool] ?? [false, false, false, false, false,false,
-                   false, false, false, false,false, false,
-                   false, false, false]
+    as? [Bool] ?? [false]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +26,36 @@ class TasksViewController: UIViewController {
     self.tableView.delegate = self
     load()
     mio()
+      DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+          
+      })
+    //  self.tableView.stopSkeletonAnimation()
+          //            self.tableView.hideSkeleton()
+      //self.tableView.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+      //disableSkeleton(view: self.tableView)
+      tableView.reloadData()
   }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        load()
+     //   tableView.isSkeletonable = true
+       // enableSkeleton(view: tableView)
+        
+    }
+//    func enableSkeleton(view: UIView? = nil) {
+//   
+//        view?.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .silver),
+//                                           animation: nil,
+//                                           transition: .crossDissolve(0.25))
+//    }
+//    
+//    func disableSkeleton(view: UIView? = nil) {
+//        if let view = view {
+//    
+//            view.stopSkeletonAnimation()
+//            view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+//        }
+//    }
   //MARK: ViewController Action
   
   @IBAction func addButton_clicked(_ sender: UIButton) {
@@ -102,7 +130,7 @@ class TasksViewController: UIViewController {
           [Section].self, from: loadData)
       
       omniItem = myArray!
-      tableView.reloadData()
+     
     }
   }
   
@@ -122,6 +150,11 @@ class TasksViewController: UIViewController {
    
     UserDefaults.standard.set(
       myArray, forKey: "shared")
+      
+      NotificationCenter.default.post(
+              name: NSNotification.Name(
+                rawValue: "updateArrayShared"),
+                 object: nil)
   }
 }
 //MARK: TableView DataSource
@@ -142,17 +175,17 @@ extension TasksViewController: UITableViewDataSource {
     tableView.deselectRow(at: indexPath,
                           animated: true)
     
-    let text = omniItem[indexPath.section].tasks[indexPath.row]
+    var text = omniItem[indexPath.section].tasks[indexPath.row]
    
     if omniItem.count == 1  {
-    
+      text.isDone = true
       omniItem.append(Section(name: "Done", tasks: [text]))
       omniItem[0].tasks.remove(at: indexPath.row)
       save()
       self.tableView.reloadData()
       
     } else if omniItem[indexPath.section].name != "Done"{
-  
+      text.isDone = true
       omniItem[1].tasks.append(text)
       omniItem[0].tasks.remove(at: indexPath.row)
       save()
@@ -161,13 +194,14 @@ extension TasksViewController: UITableViewDataSource {
     }
    
     if omniItem.count == 1  {
-  
+      text.isDone = false
       omniItem.append(Section(name: "To Do", tasks: [text]))
       omniItem[1].tasks.remove(at: indexPath.row)
       save()
       self.tableView.reloadData()
     
     } else if omniItem[indexPath.section].name != "To Do"{
+      text.isDone = false
       omniItem[0].tasks.append(text)
       omniItem[1].tasks.remove(at: indexPath.row)
       save()
@@ -184,6 +218,7 @@ extension TasksViewController: UITableViewDataSource {
     label.textAlignment = .center
     label.backgroundColor = #colorLiteral(red: 0.173355639, green: 0.1415168047, blue: 0.1407646239, alpha: 1)
     label.isHidden = omniItem[section].tasks.isEmpty
+    
     return label
   }
   
@@ -211,6 +246,8 @@ extension TasksViewController: UITableViewDataSource {
         } else {
           cell.accessoryType = .none
         }
+      
+      tableView.isSkeletonable = true
     return cell
   }
 }
@@ -264,9 +301,27 @@ extension TasksViewController: UITableViewDelegate {
       title: "Share")
     { (action, index) in
       
-      self.sharedArrayTask.append(self.omniItem[indexPath.section].tasks[index.row].taskName)
+      // Leggi array esistente da UserDefaults
+      var stored: [Task] = []
+      if let data = UserDefaults.standard.data(forKey: "shared"),
+         let decoded = try? JSONDecoder().decode([Task].self, from: data) {
+        stored = decoded
+      }
       
-      self.save2()
+      // Aggiungi Task completo con isDone impostato
+      var task = self.omniItem[indexPath.section].tasks[index.row]
+      task.shared = true
+      stored.append(task)
+      
+      // Salva array completo
+      if let encoded = try? JSONEncoder().encode(stored) {
+        UserDefaults.standard.set(encoded, forKey: "shared")
+      }
+      
+      // Notifica la Home del nuovo Task condiviso
+      NotificationCenter.default.post(
+        name: NSNotification.Name("sharedUpdated"),
+        object: task)
       
       self.omniItem[indexPath.section].tasks.remove(
         at: index.row)

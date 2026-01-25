@@ -1,111 +1,60 @@
-//  UiViewController+.swift
+//
+//  UIViewController+.swift
 //  Plany
-//  Created by Gianluca Dubioso on 26/10/2020.
-//  Extension UIView Controller
+//
+//  Created by Gianluca Dubioso on 16/04/25.
+//
 
 import UIKit
 
 extension UIViewController {
-                //MARK: Custom Nav Button
-  func customNavigationButton(selector: Selector? = nil, named: String? = nil, tintColor: UIColor? = nil, dataButton: Data? = nil){
-    let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
     
-    if let namedExist = named {
-      mioButton.setImage(UIImage(named: namedExist), for: .normal)
-    }
-   if let dataExist = dataButton {
-    mioButton.setImage(UIImage(data: dataExist, scale: CGFloat(20)), for: .normal)
-    mioButton.layer.cornerRadius = mioButton.frame.width*0.6
-   }
-    if let ciSta = selector {
-      mioButton.addTarget(self, action: ciSta, for: .touchUpInside)
-    }
-    if let cistaColor = tintColor {
-      mioButton.imageView?.image = mioButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
-      mioButton.imageView?.tintColor = cistaColor
-    }
-    mioButton.clipsToBounds = true
-    mioButton.imageView?.contentMode = .scaleAspectFit
-    navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
-  }
-  
-  //MARK: Label Navigation
-  func labelNavigation(textColor: UIColor, text: String){
-    let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
-    label.numberOfLines = 2
-    label.text = text
-    label.textColor = textColor
+    //UIViewNavigations Components
+    //MARK: Custom Nav Button
     
-    navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
-  }
-  //MARK: Function 
-  @objc func addTapped () {
-    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "peppe2") as? CalendarViewController  else {
-      return
+    func customNavigationButton(selector: Selector? = nil, named: String? = nil, tintColor: UIColor? = nil, dataButton: Data? = nil) {
+        let mioButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
+        
+        
+        if let namedExist = named {
+            if let image = UIImage(named: namedExist) {
+                let resizedImage = image.resized(to: CGSize(width: 32, height: 32))
+                //  mioButton.imageView?.contentMode = .scaleAspectFill
+                mioButton.setImage(resizedImage, for: .normal)
+            }
+        }
+        
+        if let dataExist = dataButton {
+            if let image = UIImage(data: dataExist) {
+                let resizedImage = image.resized(to: CGSize(width: 32, height: 32))
+                mioButton.setImage(resizedImage, for: .normal)
+            }
+        }
+        
+        if let ciSta = selector {
+            mioButton.addTarget(self, action: ciSta, for: .touchUpInside)
+        }
+        
+        if let cistaColor = tintColor {
+            //            mioButton.imageView?.image = mioButton.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            mioButton.imageView?.tintColor = cistaColor
+            // mioButton.tintColor = cistaColor
+        }
+        
+        mioButton.imageView?.contentMode = .scaleAspectFill
+        mioButton.clipsToBounds = true
+        //  mioButton.imageView?.contentMode = .scaleAspectFill
+        mioButton.layer.cornerRadius = mioButton.frame.height / 2
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: mioButton)]
     }
-    vc.modalPresentationStyle = .overFullScreen
-    navigationController?.pushViewController(vc, animated: true)
-  }
-
-  @objc func addTapped2 () {
-    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Profile") as? ProfileViewController  else {
-      return
+    //MARK: Label Navigation
+    func labelNavigation(textColor: UIColor, text: String){
+        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 32))
+        label.numberOfLines = 2
+        label.text = text
+        label.textColor = textColor
+        
+        navigationItem.leftBarButtonItems = [UIBarButtonItem(customView: label)]
     }
-    vc.modalPresentationStyle = .overFullScreen
-    navigationController?.pushViewController(vc, animated: true)
-  }
-  
-  
-  @objc func addTapped3 () {
-    guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Picker") as? PickerViewController  else {
-      return
-    }
-    vc.modalTransitionStyle = .crossDissolve
-    navigationController?.present(vc, animated: true)
-  }
-  
-  // MARK: Alert
-  func alertPresent(textTitle: String, mexText : String, actTitle: String) {
-  
-    let alert = UIAlertController(title: textTitle ,
-                                  message: mexText,
-                                  preferredStyle: .alert)
-    
-         alert.addAction(UIAlertAction(
-                          title: actTitle,
-                          style: .cancel,
-                          handler: nil))
-        present(alert,
-                animated: true,
-                completion: nil)
-  }
-  
-  
-  //MARK: finire change datepicker
-//
-//  @objc func showDatePicker(){
-//     //Formate Date
-//      datePicker.datePickerMode = .date
-//
-//      //ToolBar
-//     let toolbar = UIToolbar();
-//     toolbar.sizeToFit()
-
-  
-  
-  
-  //MARK: UserDefaults handler
-  
-//  @objc func Defaultset(data: String? = nil, key: String) {
-//    UserDefaults.standard.set(data, forKey: key)
-//  }
-//  @objc func DefaultObj(key: String){
-//    UserDefaults.standard.object(forKey: key)
-//  }
-//  @objc func DefaultString(key: String){
-//    UserDefaults.standard.string(forKey: key)
-//  }
-
 
 }
-
